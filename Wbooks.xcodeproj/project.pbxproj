@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BD20C9D87C530596116E85F /* Pods_Wbooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F7571156349EF7DA93FB8D /* Pods_Wbooks.framework */; };
+		52502D460CC570604C8A5908 /* Pods_Wbooks_WbooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F882ED81AD8D8B6D5BD2B7 /* Pods_Wbooks_WbooksUITests.framework */; };
 		A054A59D261B4AC40092926E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A59C261B4AC40092926E /* AppDelegate.swift */; };
 		A054A59F261B4AC40092926E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A59E261B4AC40092926E /* SceneDelegate.swift */; };
 		A054A5A1261B4AC40092926E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A5A0261B4AC40092926E /* ViewController.swift */; };
@@ -15,6 +17,7 @@
 		A054A5A9261B4AC50092926E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A054A5A7261B4AC50092926E /* LaunchScreen.storyboard */; };
 		A054A5B4261B4AC50092926E /* WbooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A5B3261B4AC50092926E /* WbooksTests.swift */; };
 		A054A5BF261B4AC50092926E /* WbooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A5BE261B4AC50092926E /* WbooksUITests.swift */; };
+		B06BEAE84E3DA9FFE055DF01 /* Pods_WbooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6822E8920181DCD5FEF2755C /* Pods_WbooksTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DBD32EEEC67677CBD36388A /* Pods-Wbooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks.release.xcconfig"; path = "Target Support Files/Pods-Wbooks/Pods-Wbooks.release.xcconfig"; sourceTree = "<group>"; };
+		45E316C21DBA6C02162593B4 /* Pods-Wbooks-WbooksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks-WbooksUITests.debug.xcconfig"; path = "Target Support Files/Pods-Wbooks-WbooksUITests/Pods-Wbooks-WbooksUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		65F882ED81AD8D8B6D5BD2B7 /* Pods_Wbooks_WbooksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wbooks_WbooksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6822E8920181DCD5FEF2755C /* Pods_WbooksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WbooksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83B9CF8A99B83C1F7131F1D4 /* Pods-WbooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbooksTests.release.xcconfig"; path = "Target Support Files/Pods-WbooksTests/Pods-WbooksTests.release.xcconfig"; sourceTree = "<group>"; };
+		8571F9EC64ECF8E76D463F8F /* Pods-Wbooks-WbooksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks-WbooksUITests.release.xcconfig"; path = "Target Support Files/Pods-Wbooks-WbooksUITests/Pods-Wbooks-WbooksUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A054A599261B4AC40092926E /* Wbooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wbooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A054A59C261B4AC40092926E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A054A59E261B4AC40092926E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		A054A5BA261B4AC50092926E /* WbooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WbooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A054A5BE261B4AC50092926E /* WbooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WbooksUITests.swift; sourceTree = "<group>"; };
 		A054A5C0261B4AC50092926E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAECCA2CB363664C7CFD6CC0 /* Pods-Wbooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks.debug.xcconfig"; path = "Target Support Files/Pods-Wbooks/Pods-Wbooks.debug.xcconfig"; sourceTree = "<group>"; };
+		D3F7571156349EF7DA93FB8D /* Pods_Wbooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wbooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8EB7323FF6250F83E4EBABF /* Pods-WbooksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbooksTests.debug.xcconfig"; path = "Target Support Files/Pods-WbooksTests/Pods-WbooksTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BD20C9D87C530596116E85F /* Pods_Wbooks.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06BEAE84E3DA9FFE055DF01 /* Pods_WbooksTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52502D460CC570604C8A5908 /* Pods_Wbooks_WbooksUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CB5BF225F64EC3A88ABD8D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3F7571156349EF7DA93FB8D /* Pods_Wbooks.framework */,
+				65F882ED81AD8D8B6D5BD2B7 /* Pods_Wbooks_WbooksUITests.framework */,
+				6822E8920181DCD5FEF2755C /* Pods_WbooksTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A054A590261B4AC40092926E = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				A054A5B2261B4AC50092926E /* WbooksTests */,
 				A054A5BD261B4AC50092926E /* WbooksUITests */,
 				A054A59A261B4AC40092926E /* Products */,
+				E9E1A8890AA845EFEC1ADC64 /* Pods */,
+				1CB5BF225F64EC3A88ABD8D3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +155,20 @@
 			path = WbooksUITests;
 			sourceTree = "<group>";
 		};
+		E9E1A8890AA845EFEC1ADC64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAECCA2CB363664C7CFD6CC0 /* Pods-Wbooks.debug.xcconfig */,
+				0DBD32EEEC67677CBD36388A /* Pods-Wbooks.release.xcconfig */,
+				45E316C21DBA6C02162593B4 /* Pods-Wbooks-WbooksUITests.debug.xcconfig */,
+				8571F9EC64ECF8E76D463F8F /* Pods-Wbooks-WbooksUITests.release.xcconfig */,
+				F8EB7323FF6250F83E4EBABF /* Pods-WbooksTests.debug.xcconfig */,
+				83B9CF8A99B83C1F7131F1D4 /* Pods-WbooksTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A054A5C3261B4AC50092926E /* Build configuration list for PBXNativeTarget "Wbooks" */;
 			buildPhases = (
+				6EAE512C10CAAD30E58CAC29 /* [CP] Check Pods Manifest.lock */,
 				A054A595261B4AC40092926E /* Sources */,
 				A054A596261B4AC40092926E /* Frameworks */,
 				A054A597261B4AC40092926E /* Resources */,
+				E330C58C1F38C0FE867513C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A054A5C6261B4AC50092926E /* Build configuration list for PBXNativeTarget "WbooksTests" */;
 			buildPhases = (
+				F2A83C446E5242791D6B8002 /* [CP] Check Pods Manifest.lock */,
 				A054A5AB261B4AC50092926E /* Sources */,
 				A054A5AC261B4AC50092926E /* Frameworks */,
 				A054A5AD261B4AC50092926E /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A054A5C9261B4AC50092926E /* Build configuration list for PBXNativeTarget "WbooksUITests" */;
 			buildPhases = (
+				CBAF74AB4820F79106EB9078 /* [CP] Check Pods Manifest.lock */,
 				A054A5B6261B4AC50092926E /* Sources */,
 				A054A5B7261B4AC50092926E /* Frameworks */,
 				A054A5B8261B4AC50092926E /* Resources */,
+				C01F48AADBA353ADBEED3191 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6EAE512C10CAAD30E58CAC29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wbooks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C01F48AADBA353ADBEED3191 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wbooks-WbooksUITests/Pods-Wbooks-WbooksUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wbooks-WbooksUITests/Pods-Wbooks-WbooksUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wbooks-WbooksUITests/Pods-Wbooks-WbooksUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBAF74AB4820F79106EB9078 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wbooks-WbooksUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E330C58C1F38C0FE867513C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wbooks/Pods-Wbooks-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wbooks/Pods-Wbooks-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wbooks/Pods-Wbooks-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2A83C446E5242791D6B8002 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WbooksTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A054A595261B4AC40092926E /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		A054A5C4261B4AC50092926E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAECCA2CB363664C7CFD6CC0 /* Pods-Wbooks.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +601,7 @@
 		};
 		A054A5C5261B4AC50092926E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DBD32EEEC67677CBD36388A /* Pods-Wbooks.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +620,7 @@
 		};
 		A054A5C7261B4AC50092926E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8EB7323FF6250F83E4EBABF /* Pods-WbooksTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +642,7 @@
 		};
 		A054A5C8261B4AC50092926E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83B9CF8A99B83C1F7131F1D4 /* Pods-WbooksTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +664,7 @@
 		};
 		A054A5CA261B4AC50092926E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45E316C21DBA6C02162593B4 /* Pods-Wbooks-WbooksUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +684,7 @@
 		};
 		A054A5CB261B4AC50092926E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8571F9EC64ECF8E76D463F8F /* Pods-Wbooks-WbooksUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
