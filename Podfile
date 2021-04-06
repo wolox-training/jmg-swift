@@ -7,6 +7,7 @@ target 'Wbooks' do
 
   # Pods for Wbooks
  pod 'Alamofire', '~> 5.2'
+ pod 'SwiftLint'
 
   target 'WbooksTests' do
     inherit! :search_paths
