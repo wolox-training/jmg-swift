@@ -23,7 +23,7 @@ class NibView: UIView {
         xibSetup()
     }
 
-    // Setups view from .xib file
+    /// Setups view from .xib file
     private func xibSetup() {
         backgroundColor = .clear
         let view = loadNib()
