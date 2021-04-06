@@ -14,10 +14,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         getValue(forKey: "WBooksKey")
     }
-
-    // Ver si puedo sacar la clave de Info.plist
+    
+    // MARK: Actions
+    @IBAction func logIn(_ sender: UIButton) {
+        print("Log in realizado 👍")
+    }
+    
+    // Check for Key value in Info.plist
     func getValue(forKey key : String) -> String?{
-        print(key)
         print(Bundle.main.infoDictionary?[key] as? String)
         return Bundle.main.infoDictionary?[key] as? String
     }
