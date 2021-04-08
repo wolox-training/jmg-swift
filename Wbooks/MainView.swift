@@ -21,5 +21,9 @@ final class MainView: NibView {
     // MARK: Actions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         print("Login successful 👍")
+        let libraryView: LibraryView = LibraryView()
+        
+        // App should display Library View
+        
     }
 }
