@@ -10,61 +10,64 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomCell" customModule="Wbooks" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+        <view contentMode="scaleToFill" id="zzA-17-E9f" customClass="CustomCell" customModule="Wbooks" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zl1-8k-nim">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rty-2u-N6B">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="BookCover1" translatesAutoresizingMaskIntoConstraints="NO" id="00B-5o-nRV">
-                            <rect key="frame" x="16" y="8" width="84" height="84"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookCover1" translatesAutoresizingMaskIntoConstraints="NO" id="ety-1h-8bt">
+                            <rect key="frame" x="16" y="16" width="101" height="101"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="84" id="Edz-Nh-oQT"/>
-                                <constraint firstAttribute="width" constant="84" id="MOW-iF-p90"/>
+                                <constraint firstAttribute="height" constant="101" id="5pw-fa-md9"/>
+                                <constraint firstAttribute="width" constant="101" id="TPZ-qx-D6s"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3O-yr-2Sc">
-                            <rect key="frame" x="108" y="8" width="110" height="30"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdp-1Q-F5V">
+                            <rect key="frame" x="125" y="16" width="281" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xM-V6-t0k">
-                            <rect key="frame" x="108" y="46" width="91.666666666666686" height="21"/>
-                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KCr-KS-xtN">
+                            <rect key="frame" x="125" y="46" width="94.333333333333314" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="6xM-V6-t0k" firstAttribute="leading" secondItem="00B-5o-nRV" secondAttribute="trailing" constant="8" symbolic="YES" id="PLc-fd-50j"/>
-                        <constraint firstItem="J3O-yr-2Sc" firstAttribute="leading" secondItem="00B-5o-nRV" secondAttribute="trailing" constant="8" symbolic="YES" id="a1Q-nG-iRi"/>
-                        <constraint firstItem="J3O-yr-2Sc" firstAttribute="top" secondItem="zl1-8k-nim" secondAttribute="top" constant="8" id="cW7-Oe-K1M"/>
-                        <constraint firstItem="6xM-V6-t0k" firstAttribute="top" secondItem="J3O-yr-2Sc" secondAttribute="bottom" constant="8" symbolic="YES" id="dpZ-2s-Syr"/>
-                        <constraint firstItem="00B-5o-nRV" firstAttribute="leading" secondItem="zl1-8k-nim" secondAttribute="leading" constant="16" id="qTM-Nh-RKm"/>
+                        <constraint firstItem="KCr-KS-xtN" firstAttribute="top" secondItem="zdp-1Q-F5V" secondAttribute="bottom" id="7NA-er-AzL"/>
+                        <constraint firstItem="zdp-1Q-F5V" firstAttribute="leading" secondItem="ety-1h-8bt" secondAttribute="trailing" constant="8" symbolic="YES" id="94W-2k-geR"/>
+                        <constraint firstItem="zdp-1Q-F5V" firstAttribute="top" secondItem="rty-2u-N6B" secondAttribute="top" constant="16" id="Fmt-oh-79A"/>
+                        <constraint firstItem="ety-1h-8bt" firstAttribute="centerY" secondItem="rty-2u-N6B" secondAttribute="centerY" id="Ybu-x9-TtN"/>
+                        <constraint firstItem="ety-1h-8bt" firstAttribute="leading" secondItem="rty-2u-N6B" secondAttribute="leading" constant="16" id="b6e-in-Db1"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="zdp-1Q-F5V" secondAttribute="trailing" id="fz8-01-2Z5"/>
+                        <constraint firstAttribute="bottom" secondItem="ety-1h-8bt" secondAttribute="bottom" constant="16" id="kKS-PH-5DP"/>
+                        <constraint firstItem="KCr-KS-xtN" firstAttribute="leading" secondItem="ety-1h-8bt" secondAttribute="trailing" constant="8" symbolic="YES" id="t8r-QP-j7B"/>
+                        <constraint firstItem="ety-1h-8bt" firstAttribute="top" secondItem="rty-2u-N6B" secondAttribute="top" constant="16" id="x8b-99-Af0"/>
                     </constraints>
                 </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="9If-fA-RPF"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="zl1-8k-nim" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="9Ef-bm-1dP"/>
-                <constraint firstItem="zl1-8k-nim" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="TNU-m4-eBT"/>
-                <constraint firstItem="zl1-8k-nim" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="aOb-x8-qQm"/>
-                <constraint firstItem="zl1-8k-nim" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ckl-dO-jIu"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="leading" secondItem="9If-fA-RPF" secondAttribute="leading" id="BeQ-lV-D67"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="bottom" secondItem="9If-fA-RPF" secondAttribute="bottom" id="hPH-Mr-S6j"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="top" secondItem="9If-fA-RPF" secondAttribute="top" id="j5M-Mv-nGn"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="trailing" secondItem="9If-fA-RPF" secondAttribute="trailing" id="zBY-7E-Gw8"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="bookCover" destination="00B-5o-nRV" id="p8V-GD-Wgi"/>
-                <outlet property="imgBookCover" destination="00B-5o-nRV" id="bwU-hY-4ki"/>
-                <outlet property="lblBookAuthor" destination="6xM-V6-t0k" id="ZR2-iW-cKD"/>
-                <outlet property="lblBookTitle" destination="J3O-yr-2Sc" id="6th-GV-UIr"/>
+                <outlet property="imgBookCover" destination="ety-1h-8bt" id="qqD-mI-t0i"/>
+                <outlet property="lblBookAuthor" destination="KCr-KS-xtN" id="rGQ-W2-GNv"/>
+                <outlet property="lblBookTitle" destination="zdp-1Q-F5V" id="2E6-t1-o5m"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="66.84782608695653"/>
+            <point key="canvasLocation" x="-502.89855072463774" y="155.70652173913044"/>
         </view>
     </objects>
     <resources>

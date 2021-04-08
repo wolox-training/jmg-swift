@@ -2,18 +2,17 @@
 //  CustomCell.swift
 //  Wbooks
 //
-//  Created by Juan Martín Gordo on 07/04/2021.
+//  Created by Juan Martín Gordo on 08/04/2021.
 //
 
 import UIKit
 
 class CustomCell: UITableViewCell {
-    
+
     // MARK: Properties
     @IBOutlet weak var imgBookCover: UIImageView!
     @IBOutlet weak var lblBookTitle: UILabel!
     @IBOutlet weak var lblBookAuthor: UILabel!
-    
     
     // MARK: Actions
     override func awakeFromNib() {
@@ -26,5 +25,5 @@ class CustomCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

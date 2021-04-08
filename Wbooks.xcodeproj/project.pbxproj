@@ -11,8 +11,8 @@
 		52502D460CC570604C8A5908 /* Pods_Wbooks_WbooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F882ED81AD8D8B6D5BD2B7 /* Pods_Wbooks_WbooksUITests.framework */; };
 		A0417385261E2CC8004EAF62 /* LibraryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0417384261E2CC8004EAF62 /* LibraryView.xib */; };
 		A041738A261E2CF2004EAF62 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0417389261E2CF2004EAF62 /* LibraryView.swift */; };
-		A041738F261E2D02004EAF62 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A041738E261E2D02004EAF62 /* CustomCell.xib */; };
-		A0417394261E2D15004EAF62 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0417393261E2D15004EAF62 /* CustomCell.swift */; };
+		A042B51C261F6EB40039CF73 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042B51A261F6EB40039CF73 /* CustomCell.swift */; };
+		A042B51D261F6EB40039CF73 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042B51B261F6EB40039CF73 /* CustomCell.xib */; };
 		A054A59D261B4AC40092926E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A59C261B4AC40092926E /* AppDelegate.swift */; };
 		A054A59F261B4AC40092926E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A59E261B4AC40092926E /* SceneDelegate.swift */; };
 		A054A5A6261B4AC50092926E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A054A5A5261B4AC50092926E /* Assets.xcassets */; };
@@ -57,8 +57,8 @@
 		A041732C261E0B67004EAF62 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ConfigurationFiles/Release.xcconfig; sourceTree = "<group>"; };
 		A0417384261E2CC8004EAF62 /* LibraryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryView.xib; sourceTree = "<group>"; };
 		A0417389261E2CF2004EAF62 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
-		A041738E261E2D02004EAF62 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
-		A0417393261E2D15004EAF62 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		A042B51A261F6EB40039CF73 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		A042B51B261F6EB40039CF73 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		A054A599261B4AC40092926E /* Wbooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wbooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A054A59C261B4AC40092926E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A054A59E261B4AC40092926E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,10 +154,10 @@
 				A072D942261CF4C3002DBD0F /* MainView.swift */,
 				A072D976261D0179002DBD0F /* MainView.xib */,
 				A09AE8AD261F559700F8B1F9 /* LibraryController.swift */,
+				A042B51A261F6EB40039CF73 /* CustomCell.swift */,
+				A042B51B261F6EB40039CF73 /* CustomCell.xib */,
 				A0417389261E2CF2004EAF62 /* LibraryView.swift */,
 				A0417384261E2CC8004EAF62 /* LibraryView.xib */,
-				A0417393261E2D15004EAF62 /* CustomCell.swift */,
-				A041738E261E2D02004EAF62 /* CustomCell.xib */,
 				A05ABAA1261CC3B40080619A /* Enviroment.swift */,
 				A072D938261CF42D002DBD0F /* NibView.swift */,
 				A054A5A5261B4AC50092926E /* Assets.xcassets */,
@@ -307,7 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A041738F261E2D02004EAF62 /* CustomCell.xib in Resources */,
+				A042B51D261F6EB40039CF73 /* CustomCell.xib in Resources */,
 				A0417385261E2CC8004EAF62 /* LibraryView.xib in Resources */,
 				A072D977261D0179002DBD0F /* MainView.xib in Resources */,
 				A054A5A9261B4AC50092926E /* LaunchScreen.storyboard in Resources */,
@@ -461,9 +461,9 @@
 				A072D943261CF4C3002DBD0F /* MainView.swift in Sources */,
 				A054A59D261B4AC40092926E /* AppDelegate.swift in Sources */,
 				A05ABAA2261CC3B40080619A /* Enviroment.swift in Sources */,
+				A042B51C261F6EB40039CF73 /* CustomCell.swift in Sources */,
 				A072D93E261CF476002DBD0F /* MainViewController.swift in Sources */,
 				A054A59F261B4AC40092926E /* SceneDelegate.swift in Sources */,
-				A0417394261E2D15004EAF62 /* CustomCell.swift in Sources */,
 				A09AE8AE261F559700F8B1F9 /* LibraryController.swift in Sources */,
 				A072D939261CF42D002DBD0F /* NibView.swift in Sources */,
 			);
