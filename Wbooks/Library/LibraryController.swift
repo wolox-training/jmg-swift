@@ -18,8 +18,8 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "CustomCell", bundle: nil)
-        libraryView.booksTable.register(nib, forCellReuseIdentifier: CustomCell.identifier)
+        let nib = UINib(nibName: "LibraryCell", bundle: nil)
+        libraryView.booksTable.register(nib, forCellReuseIdentifier: LibraryCell.identifier)
         libraryView.booksTable.delegate = self
         libraryView.booksTable.dataSource = self
     }
@@ -39,16 +39,16 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.identifier, for: indexPath) as! LibraryCell
         let book = booksArray[indexPath.row]
         
         cell.backgroundColor = .clear
         cell.backgroundView = UIView()
         cell.selectedBackgroundView = UIView()
         
-        cell.imgBookCover.image = book.cover
-        cell.lblBookTitle.text = book.title
-        cell.lblBookAuthor.text = book.author
+        cell.coverImage.image = book.cover
+        cell.titleLabel.text = book.title
+        cell.authorLabel.text = book.author
         
         return cell
     }
