@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import UIKit
+
+struct Book {
+    
+    // MARK: Properties
+    let cover: UIImage
+    let title, author: String
+    
+}
