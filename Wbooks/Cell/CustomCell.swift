@@ -10,6 +10,14 @@ import UIKit
 class CustomCell: UITableViewCell {
 
     // MARK: Properties
+    static let identifier = "CustomCell"
+    
+    
+    @IBOutlet weak var cellView: UIView! {
+        didSet {
+            cellView.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet weak var imgBookCover: UIImageView!
     @IBOutlet weak var lblBookTitle: UILabel!
     @IBOutlet weak var lblBookAuthor: UILabel!

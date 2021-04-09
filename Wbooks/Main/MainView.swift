@@ -11,19 +11,6 @@ import UIKit
 final class MainView: NibView {
     
     // MARK: Properties
-    @IBOutlet weak var loginButton: UIButton! {
-        didSet {
-            // Modify button properties here
-            
-        }
-    }
+    @IBOutlet weak var loginButton: UIButton!
     
-    // MARK: Actions
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
-        print("Login successful 👍")
-        // let libraryView: LibraryView = LibraryView()
-        
-        // App should display Library View
-        
-    }
 }

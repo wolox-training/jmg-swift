@@ -12,14 +12,14 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: Properties
     private lazy var libraryView: LibraryView = LibraryView()
-        
-    var booksArray : Array = [["book_cover" : UIImage(named: "BookCover1")!, "book_title" : "A Little Bird Told Me", "book_author" : "Timothy Cross"], ["book_cover" : UIImage(named: "BookCover2")!, "book_title" : "When the Doves Disappeared", "book_author" : "Sofi Oksanen"], ["book_cover" : UIImage(named: "BookCover3")!, "book_title" : "The Best Book in the World", "book_author" : "Peter Sjernstrom"], ["book_cover" : UIImage(named: "BookCover4")!, "book_title" : "Be Creative", "book_author" : "Tony Alcazar"], ["book_cover" : UIImage(named: "BookCover5")!, "book_title" : "Redesign the Web", "book_author" : "Liliana Castilla"]]
+    
+    private let booksArray : [Book] = [Book(cover: UIImage(named: "BookCover1")!, title: "A Little Bird Told Me", author: "Timothy Cross"), Book(cover: UIImage(named: "BookCover2")!, title: "When the Doves Disappeared", author: "Sofi Oksanen"), Book(cover: UIImage(named: "BookCover3")!, title: "The Best Book in the World", author: "Peter Sjernstrom"), Book(cover: UIImage(named: "BookCover4")!, title: "Be Creative", author: "Tony Alcazar"), Book(cover: UIImage(named: "BookCover5")!, title: "Redesign the Web", author: "Liliana Castilla")]
     
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib.init(nibName: "CustomCell", bundle: nil)
-        libraryView.booksTable.register(nib, forCellReuseIdentifier: "CustomCell")
+        let nib = UINib(nibName: "CustomCell", bundle: nil)
+        libraryView.booksTable.register(nib, forCellReuseIdentifier: CustomCell.identifier)
         libraryView.booksTable.delegate = self
         libraryView.booksTable.dataSource = self
     }
@@ -34,18 +34,17 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     }
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 125
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
+        let book = booksArray[indexPath.row]
         
-        let dict = booksArray[indexPath.row]
-        
-        cell.imgBookCover.image = dict["book_cover"] as? UIImage
-        cell.lblBookTitle.text = dict["book_title"] as? String
-        cell.lblBookAuthor.text = dict["book_author"] as? String
+        cell.imgBookCover.image = book.cover
+        cell.lblBookTitle.text = book.title
+        cell.lblBookAuthor.text = book.author
         
         return cell
     }

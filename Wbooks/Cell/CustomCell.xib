@@ -15,54 +15,57 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rty-2u-N6B">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                    <rect key="frame" x="16" y="8" width="382" height="109"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookCover1" translatesAutoresizingMaskIntoConstraints="NO" id="ety-1h-8bt">
-                            <rect key="frame" x="16" y="16" width="101" height="101"/>
+                            <rect key="frame" x="24" y="12" width="85" height="85"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="101" id="5pw-fa-md9"/>
-                                <constraint firstAttribute="width" constant="101" id="TPZ-qx-D6s"/>
+                                <constraint firstAttribute="width" secondItem="ety-1h-8bt" secondAttribute="height" multiplier="1:1" id="5ve-ax-tlw"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdp-1Q-F5V">
-                            <rect key="frame" x="125" y="16" width="281" height="30"/>
+                            <rect key="frame" x="117" y="12" width="257" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KCr-KS-xtN">
-                            <rect key="frame" x="125" y="46" width="94.333333333333314" height="20.333333333333329"/>
+                            <rect key="frame" x="117" y="42" width="94.333333333333314" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="KCr-KS-xtN" firstAttribute="top" secondItem="zdp-1Q-F5V" secondAttribute="bottom" id="7NA-er-AzL"/>
-                        <constraint firstItem="zdp-1Q-F5V" firstAttribute="leading" secondItem="ety-1h-8bt" secondAttribute="trailing" constant="8" symbolic="YES" id="94W-2k-geR"/>
-                        <constraint firstItem="zdp-1Q-F5V" firstAttribute="top" secondItem="rty-2u-N6B" secondAttribute="top" constant="16" id="Fmt-oh-79A"/>
-                        <constraint firstItem="ety-1h-8bt" firstAttribute="centerY" secondItem="rty-2u-N6B" secondAttribute="centerY" id="Ybu-x9-TtN"/>
-                        <constraint firstItem="ety-1h-8bt" firstAttribute="leading" secondItem="rty-2u-N6B" secondAttribute="leading" constant="16" id="b6e-in-Db1"/>
-                        <constraint firstAttribute="trailingMargin" secondItem="zdp-1Q-F5V" secondAttribute="trailing" id="fz8-01-2Z5"/>
-                        <constraint firstAttribute="bottom" secondItem="ety-1h-8bt" secondAttribute="bottom" constant="16" id="kKS-PH-5DP"/>
-                        <constraint firstItem="KCr-KS-xtN" firstAttribute="leading" secondItem="ety-1h-8bt" secondAttribute="trailing" constant="8" symbolic="YES" id="t8r-QP-j7B"/>
-                        <constraint firstItem="ety-1h-8bt" firstAttribute="top" secondItem="rty-2u-N6B" secondAttribute="top" constant="16" id="x8b-99-Af0"/>
+                        <constraint firstItem="KCr-KS-xtN" firstAttribute="top" secondItem="zdp-1Q-F5V" secondAttribute="bottom" id="5G2-XZ-e48"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="zdp-1Q-F5V" secondAttribute="trailing" id="9ui-Wp-khI"/>
+                        <constraint firstItem="ety-1h-8bt" firstAttribute="top" secondItem="rty-2u-N6B" secondAttribute="top" constant="12" id="CrY-qO-x4H"/>
+                        <constraint firstItem="KCr-KS-xtN" firstAttribute="leading" secondItem="ety-1h-8bt" secondAttribute="trailing" constant="8" symbolic="YES" id="GiF-zP-1ux"/>
+                        <constraint firstItem="ety-1h-8bt" firstAttribute="leading" secondItem="rty-2u-N6B" secondAttribute="leading" constant="24" id="XQg-BM-HaX"/>
+                        <constraint firstItem="zdp-1Q-F5V" firstAttribute="leading" secondItem="ety-1h-8bt" secondAttribute="trailing" constant="8" symbolic="YES" id="kYK-zN-U82"/>
+                        <constraint firstAttribute="bottom" secondItem="ety-1h-8bt" secondAttribute="bottom" constant="12" id="q9u-dl-2eb"/>
+                        <constraint firstItem="zdp-1Q-F5V" firstAttribute="top" secondItem="rty-2u-N6B" secondAttribute="top" constant="12" id="qgI-hk-meV"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="9If-fA-RPF"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="rty-2u-N6B" firstAttribute="leading" secondItem="9If-fA-RPF" secondAttribute="leading" id="BeQ-lV-D67"/>
-                <constraint firstItem="rty-2u-N6B" firstAttribute="bottom" secondItem="9If-fA-RPF" secondAttribute="bottom" id="hPH-Mr-S6j"/>
-                <constraint firstItem="rty-2u-N6B" firstAttribute="top" secondItem="9If-fA-RPF" secondAttribute="top" id="j5M-Mv-nGn"/>
-                <constraint firstItem="rty-2u-N6B" firstAttribute="trailing" secondItem="9If-fA-RPF" secondAttribute="trailing" id="zBY-7E-Gw8"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="leading" secondItem="9If-fA-RPF" secondAttribute="leading" constant="16" id="BeQ-lV-D67"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="centerX" secondItem="zzA-17-E9f" secondAttribute="centerX" id="gJx-Cz-0Bu"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="bottom" secondItem="9If-fA-RPF" secondAttribute="bottom" constant="-8" id="hPH-Mr-S6j"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="top" secondItem="9If-fA-RPF" secondAttribute="top" constant="8" id="j5M-Mv-nGn"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="centerY" secondItem="zzA-17-E9f" secondAttribute="centerY" id="opO-aZ-pWx"/>
+                <constraint firstItem="rty-2u-N6B" firstAttribute="trailing" secondItem="9If-fA-RPF" secondAttribute="trailing" constant="-16" id="zBY-7E-Gw8"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cellView" destination="rty-2u-N6B" id="sh4-Mu-eNh"/>
                 <outlet property="imgBookCover" destination="ety-1h-8bt" id="qqD-mI-t0i"/>
                 <outlet property="lblBookAuthor" destination="KCr-KS-xtN" id="rGQ-W2-GNv"/>
                 <outlet property="lblBookTitle" destination="zdp-1Q-F5V" id="2E6-t1-o5m"/>

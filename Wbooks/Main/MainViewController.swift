@@ -18,14 +18,17 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        setupLoginButton()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func setupLoginButton() {
+        mainView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
+    @objc private func loginButtonTapped() {
+        let controller = LibraryController()
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
+    }
     
 }
