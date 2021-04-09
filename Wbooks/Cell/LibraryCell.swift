@@ -22,4 +22,12 @@ class LibraryCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     
+    // MARK: Actions
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundColor = .clear
+        self.backgroundView = UIView()
+        self.selectedBackgroundView = UIView()
+    }
+    
 }

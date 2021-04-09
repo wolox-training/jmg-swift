@@ -42,10 +42,6 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.identifier, for: indexPath) as! LibraryCell
         let book = booksArray[indexPath.row]
         
-        cell.backgroundColor = .clear
-        cell.backgroundView = UIView()
-        cell.selectedBackgroundView = UIView()
-        
         cell.coverImage.image = book.cover
         cell.titleLabel.text = book.title
         cell.authorLabel.text = book.author
