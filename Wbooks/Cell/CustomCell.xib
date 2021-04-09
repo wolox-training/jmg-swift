@@ -37,7 +37,6 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="KCr-KS-xtN" firstAttribute="top" secondItem="zdp-1Q-F5V" secondAttribute="bottom" id="5G2-XZ-e48"/>
                         <constraint firstAttribute="trailingMargin" secondItem="zdp-1Q-F5V" secondAttribute="trailing" id="9ui-Wp-khI"/>
@@ -52,7 +51,6 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="9If-fA-RPF"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="rty-2u-N6B" firstAttribute="leading" secondItem="9If-fA-RPF" secondAttribute="leading" constant="16" id="BeQ-lV-D67"/>
                 <constraint firstItem="rty-2u-N6B" firstAttribute="centerX" secondItem="zzA-17-E9f" secondAttribute="centerX" id="gJx-Cz-0Bu"/>

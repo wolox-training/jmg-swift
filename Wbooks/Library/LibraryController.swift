@@ -38,9 +38,13 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+                
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
         let book = booksArray[indexPath.row]
+        
+        cell.backgroundColor = .clear
+        cell.backgroundView = UIView()
+        cell.selectedBackgroundView = UIView()
         
         cell.imgBookCover.image = book.cover
         cell.lblBookTitle.text = book.title
