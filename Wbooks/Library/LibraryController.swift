@@ -44,6 +44,23 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         setupNavBar()
     }
     
+    /// Sets up the navigation bar buttons for this specific view
+    private func setupNavBar() {
+        navigationItem.title = viewTitle.uppercased()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "SearchButton"),
+            style: .plain,
+            target: self,
+            action: #selector(searchTapped)
+        )
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "NotificationButton"),
+            style: .plain,
+            target: self,
+            action: #selector(notificationsTapped)
+        )
+    }
+    
     // MARK: UITableView delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return booksArray.count
@@ -70,22 +87,6 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: Navigation methods
-    private func setupNavBar() {
-        navigationItem.title = viewTitle.uppercased()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "SearchButton"),
-            style: .plain,
-            target: self,
-            action: #selector(searchTapped)
-        )
-        navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "NotificationButton"),
-            style: .plain,
-            target: self,
-            action: #selector(notificationsTapped)
-        )
-    }
-    
     @objc private func notificationsTapped() {
         // Switch to notifications view
     }
