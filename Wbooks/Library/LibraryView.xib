@@ -18,21 +18,33 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dLl-Xd-Jic">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="108" width="414" height="628"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="NavBarBG" translatesAutoresizingMaskIntoConstraints="NO" id="DlX-SR-z50">
+                    <rect key="frame" x="-2" y="-2" width="418" height="102"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="p1l-a4-dSX"/>
             <color key="backgroundColor" red="0.91764705882352937" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="dLl-Xd-Jic" firstAttribute="top" secondItem="p1l-a4-dSX" secondAttribute="top" id="dB8-yO-Nt1"/>
+                <constraint firstItem="DlX-SR-z50" firstAttribute="trailing" secondItem="p1l-a4-dSX" secondAttribute="trailing" constant="2" id="8vW-DI-fOu"/>
+                <constraint firstItem="dLl-Xd-Jic" firstAttribute="top" secondItem="DlX-SR-z50" secondAttribute="bottom" constant="8" symbolic="YES" id="SXP-Ny-EAN"/>
+                <constraint firstItem="DlX-SR-z50" firstAttribute="top" secondItem="Ae7-Js-MgF" secondAttribute="top" constant="-2" id="cRM-E5-Aol"/>
                 <constraint firstItem="dLl-Xd-Jic" firstAttribute="leading" secondItem="p1l-a4-dSX" secondAttribute="leading" id="gXf-wj-41e"/>
                 <constraint firstItem="dLl-Xd-Jic" firstAttribute="bottom" secondItem="p1l-a4-dSX" secondAttribute="bottom" id="i7b-0V-cTS"/>
+                <constraint firstItem="DlX-SR-z50" firstAttribute="leading" secondItem="p1l-a4-dSX" secondAttribute="leading" constant="-2" id="okX-hu-f3W"/>
                 <constraint firstItem="dLl-Xd-Jic" firstAttribute="trailing" secondItem="p1l-a4-dSX" secondAttribute="trailing" id="pkp-oo-lzV"/>
             </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <point key="canvasLocation" x="-457.97101449275368" y="-41.576086956521742"/>
         </view>
     </objects>
+    <resources>
+        <image name="NavBarBG" width="375" height="102"/>
+    </resources>
 </document>

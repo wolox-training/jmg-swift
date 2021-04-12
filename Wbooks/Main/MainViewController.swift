@@ -26,7 +26,7 @@ final class MainViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        let controller = LibraryController()
+        let controller = NavigationController(rootViewController: LibraryController())
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
