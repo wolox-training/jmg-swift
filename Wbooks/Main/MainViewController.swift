@@ -14,6 +14,7 @@ final class MainViewController: UIViewController {
     // MARK: Lifecycle methods
     override func loadView() {
         view = mainView
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func viewDidLoad() {
@@ -28,7 +29,8 @@ final class MainViewController: UIViewController {
     @objc private func loginButtonTapped() {
         let controller = LibraryController()
         controller.modalPresentationStyle = .fullScreen
-        present(controller, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }

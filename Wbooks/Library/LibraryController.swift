@@ -12,8 +12,23 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: Properties
     private lazy var libraryView: LibraryView = LibraryView()
-    
-    private let booksArray : [Book] = [Book(cover: UIImage(named: "BookCover1")!, title: "A Little Bird Told Me", author: "Timothy Cross"), Book(cover: UIImage(named: "BookCover2")!, title: "When the Doves Disappeared", author: "Sofi Oksanen"), Book(cover: UIImage(named: "BookCover3")!, title: "The Best Book in the World", author: "Peter Sjernstrom"), Book(cover: UIImage(named: "BookCover4")!, title: "Be Creative", author: "Tony Alcazar"), Book(cover: UIImage(named: "BookCover5")!, title: "Redesign the Web", author: "Liliana Castilla")]
+    private let viewTitle: String = "Library"
+    private let booksArray : [Book] = [
+        Book(cover: UIImage(named: "BookCover1")!,
+             title: "A Little Bird Told Me",
+             author: "Timothy Cross"),
+        Book(cover: UIImage(named: "BookCover2")!,
+             title: "When the Doves Disappeared",
+             author: "Sofi Oksanen"),
+        Book(cover: UIImage(named: "BookCover3")!,
+             title: "The Best Book in the World",
+             author: "Peter Sjernstrom"),
+        Book(cover: UIImage(named: "BookCover4")!,
+             title: "Be Creative",
+             author: "Tony Alcazar"),
+        Book(cover: UIImage(named: "BookCover5")!,
+             title: "Redesign the Web",
+             author: "Liliana Castilla")]
     
     // MARK: Lifecycle methods
     override func viewDidLoad() {
@@ -26,6 +41,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     override func loadView() {
         view = libraryView
+        setupNavBar()
     }
     
     // MARK: UITableView delegate
@@ -41,11 +57,45 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
                 
         let cell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.identifier, for: indexPath) as! LibraryCell
         let book = booksArray[indexPath.row]
-        
+                
         cell.coverImage.image = book.cover
         cell.titleLabel.text = book.title
         cell.authorLabel.text = book.author
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        cellTapped()
+    }
+    
+    // MARK: Navigation methods
+    private func setupNavBar() {
+        navigationItem.title = viewTitle.uppercased()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "SearchButton"),
+            style: .plain,
+            target: self,
+            action: #selector(searchTapped)
+        )
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "NotificationButton"),
+            style: .plain,
+            target: self,
+            action: #selector(notificationsTapped)
+        )
+    }
+    
+    @objc private func notificationsTapped() {
+        // Switch to notifications view
+    }
+    
+    @objc private func searchTapped() {
+        // Switch to search view
+    }
+    
+    @objc private func cellTapped() {
+        // Transition to book detail view
+    }
+    
 }
