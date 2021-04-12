@@ -19,7 +19,7 @@ class NavigationController: UINavigationController {
     }
     
     private func setupNavBar() {
-        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "NavBarBG"), for: UIBarMetrics.default)
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         UINavigationBar.appearance().isTranslucent = true
         UINavigationBar.appearance().backgroundColor = .clear
         UINavigationBar.appearance().shadowImage = UIImage()
