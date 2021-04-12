@@ -26,7 +26,6 @@
 		A072D943261CF4C3002DBD0F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A072D942261CF4C3002DBD0F /* MainView.swift */; };
 		A072D977261D0179002DBD0F /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A072D976261D0179002DBD0F /* MainView.xib */; };
 		A07E2CAF2620F047004276CF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07E2CAD2620F047004276CF /* NavigationController.swift */; };
-		A07E2CB02620F047004276CF /* NavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A07E2CAE2620F047004276CF /* NavigationController.xib */; };
 		A09AE8AE261F559700F8B1F9 /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AE8AD261F559700F8B1F9 /* LibraryController.swift */; };
 		B06BEAE84E3DA9FFE055DF01 /* Pods_WbooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6822E8920181DCD5FEF2755C /* Pods_WbooksTests.framework */; };
 /* End PBXBuildFile section */
@@ -81,7 +80,6 @@
 		A072D942261CF4C3002DBD0F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A072D976261D0179002DBD0F /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		A07E2CAD2620F047004276CF /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		A07E2CAE2620F047004276CF /* NavigationController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationController.xib; sourceTree = "<group>"; };
 		A09AE8AD261F559700F8B1F9 /* LibraryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryController.swift; sourceTree = "<group>"; };
 		BAECCA2CB363664C7CFD6CC0 /* Pods-Wbooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks.debug.xcconfig"; path = "Target Support Files/Pods-Wbooks/Pods-Wbooks.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F7571156349EF7DA93FB8D /* Pods_Wbooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wbooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				A07E2CAD2620F047004276CF /* NavigationController.swift */,
-				A07E2CAE2620F047004276CF /* NavigationController.xib */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -351,7 +348,6 @@
 				A042B51D261F6EB40039CF73 /* LibraryCell.xib in Resources */,
 				A0417385261E2CC8004EAF62 /* LibraryView.xib in Resources */,
 				A072D977261D0179002DBD0F /* MainView.xib in Resources */,
-				A07E2CB02620F047004276CF /* NavigationController.xib in Resources */,
 				A054A5A9261B4AC50092926E /* LaunchScreen.storyboard in Resources */,
 				A054A5A6261B4AC50092926E /* Assets.xcassets in Resources */,
 			);

@@ -82,7 +82,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cellTapped()
     }
     
@@ -95,7 +95,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         // Switch to search view
     }
     
-    @objc private func cellTapped() {
+    private func cellTapped() {
         // Transition to book detail view
     }
     
