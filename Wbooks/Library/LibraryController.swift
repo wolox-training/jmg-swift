@@ -12,7 +12,6 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: Properties
     private lazy var libraryView: LibraryView = LibraryView()
-    private let viewTitle: String = "Library"
     private let booksArray : [Book] = [
         Book(cover: UIImage(named: "BookCover1")!,
              title: "A Little Bird Told Me",
@@ -46,7 +45,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     /// Sets up the navigation bar buttons for this specific view
     private func setupNavBar() {
-        navigationItem.title = viewTitle.uppercased()
+        navigationItem.title = NSLocalizedString("LIBRARY_VIEW_TITLE", comment: "").uppercased()
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "SearchButton"),
             style: .plain,
