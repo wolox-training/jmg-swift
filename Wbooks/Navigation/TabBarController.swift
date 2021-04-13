@@ -33,25 +33,25 @@ final class TabBarController: UITabBarController {
         wishlist.tabBarItem.title = "Wishlist"
         wishlist.tabBarItem.image = UIImage(named: "WishlistButton")
         wishlist.tabBarItem.selectedImage = UIImage(named: "WishlistButtonActive")
-        wishlist.tabBarItem.tag = 0
+        wishlist.tabBarItem.tag = 1
         
         addNew.tabBarItem = UITabBarItem()
         addNew.tabBarItem.title = "Add New"
         addNew.tabBarItem.image = UIImage(named: "AddNewButton")
         addNew.tabBarItem.selectedImage = UIImage(named: "AddNewButtonActive")
-        addNew.tabBarItem.tag = 0
+        addNew.tabBarItem.tag = 2
         
         rentals.tabBarItem = UITabBarItem()
         rentals.tabBarItem.title = "Rentals"
         rentals.tabBarItem.image = UIImage(named: "RentalsButton")
         rentals.tabBarItem.selectedImage = UIImage(named: "RentalsButtonActive")
-        rentals.tabBarItem.tag = 0
+        rentals.tabBarItem.tag = 3
         
         settings.tabBarItem = UITabBarItem()
         settings.tabBarItem.title = "Settings"
         settings.tabBarItem.image = UIImage(named: "SettingsButton")
         settings.tabBarItem.selectedImage = UIImage(named: "SettingsButtonActive")
-        settings.tabBarItem.tag = 0
+        settings.tabBarItem.tag = 4
     }
 
 }
