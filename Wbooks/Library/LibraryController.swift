@@ -45,7 +45,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     /// Sets up the navigation bar buttons for this specific view
     private func setupNavBar() {
-        navigationItem.title = NSLocalizedString("LIBRARY_VIEW_TITLE", comment: "").uppercased()
+        navigationItem.title = NSLocalizedString("LIBRARY_VIEW.TITLE", comment: "Main title at the top of the library view")
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(named: "SearchButton"),
             style: .plain,
