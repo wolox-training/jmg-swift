@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Wbooks
+
+  Created by Juan Martín Gordo on 12/04/2021.
+  
+*/
+
+/* LOGIN VIEW */
+"LOGIN_VIEW.USERNAME_LABEL" = "Nombre de usuario";
+"LOGIN_VIEW.USERNAME_TEXT_FIELD_PLACEHOLDER" = "Ingrese un nombre de usuario";
+"LOGIN_VIEW.PASSWORD_LABEL" = "Contraseña";
+"LOGIN_VIEW.LOGIN_BUTTON" = "Ingresar";
+
+/* LIBRARY VIEW */
+"LIBRARY_VIEW.TITLE" = "BIBLIOTECA";

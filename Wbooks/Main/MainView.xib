@@ -11,6 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainView" customModule="Wbooks" customModuleProvider="target">
             <connections>
                 <outlet property="loginButton" destination="GOv-Ok-ogI" id="ezs-tk-gMh"/>
+                <outlet property="passwordLabel" destination="QhE-c6-Opg" id="HnL-Pv-uao"/>
+                <outlet property="userInput" destination="NFk-7D-MgX" id="pdf-55-JnK"/>
+                <outlet property="userLabel" destination="XC1-fp-lfZ" id="QC0-Wj-61v"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
