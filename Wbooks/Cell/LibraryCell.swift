@@ -30,4 +30,12 @@ class LibraryCell: UITableViewCell {
         self.selectedBackgroundView = UIView()
     }
     
+    
+    // MARK: - Public interface
+    
+    func setup(with viewModel: LibraryCellViewModel) {
+        coverImage.image = viewModel.cover
+        titleLabel.text = viewModel.title
+        authorLabel.text = viewModel.author
+    }
 }

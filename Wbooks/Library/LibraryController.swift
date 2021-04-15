@@ -12,22 +12,17 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: Properties
     private lazy var libraryView: LibraryView = LibraryView()
-    private let booksArray : [Book] = [
-        Book(cover: UIImage(named: "BookCover1")!,
-             title: "A Little Bird Told Me",
-             author: "Timothy Cross"),
-        Book(cover: UIImage(named: "BookCover2")!,
-             title: "When the Doves Disappeared",
-             author: "Sofi Oksanen"),
-        Book(cover: UIImage(named: "BookCover3")!,
-             title: "The Best Book in the World",
-             author: "Peter Sjernstrom"),
-        Book(cover: UIImage(named: "BookCover4")!,
-             title: "Be Creative",
-             author: "Tony Alcazar"),
-        Book(cover: UIImage(named: "BookCover5")!,
-             title: "Redesign the Web",
-             author: "Liliana Castilla")]
+    private let viewModel: LibraryViewModel
+    
+    // MARK: Initializers
+    init(viewModel: LibraryViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: .none, bundle: .none)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: Lifecycle methods
     override func viewDidLoad() {
@@ -62,7 +57,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: UITableView delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return booksArray.count
+        return viewModel.bookCount
     }
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -70,13 +65,12 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                
-        let cell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.identifier, for: indexPath) as! LibraryCell
-        let book = booksArray[indexPath.row]
-                
-        cell.coverImage.image = book.cover
-        cell.titleLabel.text = book.title
-        cell.authorLabel.text = book.author
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.identifier, for: indexPath) as? LibraryCell else {
+            return LibraryCell()
+        }
+        
+        let cellViewModel = viewModel.createLibraryCellViewModel(for: indexPath.row)
+        cell.setup(with: cellViewModel)
         
         return cell
     }
