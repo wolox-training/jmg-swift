@@ -12,6 +12,13 @@ class LibraryCell: UITableViewCell {
     // MARK: Properties
     static let identifier = "LibraryCell"
     
+    var libraryCellViewModel: LibraryCellViewModel! {
+        didSet {
+            titleLabel.text = libraryCellViewModel.title
+            authorLabel.text = libraryCellViewModel.author
+            coverImage.image = libraryCellViewModel.cover
+        }
+    }
     
     @IBOutlet weak var cellView: UIView! {
         didSet {
@@ -28,6 +35,13 @@ class LibraryCell: UITableViewCell {
         self.backgroundColor = .clear
         self.backgroundView = UIView()
         self.selectedBackgroundView = UIView()
+    }
+    
+    // MARK: Public interface
+    func setup(with viewModel: LibraryCellViewModel) {
+        coverImage.image = viewModel.cover
+        titleLabel.text = viewModel.title
+        authorLabel.text = viewModel.author
     }
     
 }
