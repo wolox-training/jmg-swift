@@ -77,15 +77,6 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         cell.setup(with: cellViewModel)
         
         return cell
-                
-//        let cell = tableView.dequeueReusableCell(withIdentifier: LibraryCell.identifier, for: indexPath) as! LibraryCell
-//        let book = booksArray[indexPath.row]
-//
-//        cell.coverImage.image = book.cover
-//        cell.titleLabel.text = book.title
-//        cell.authorLabel.text = book.author
-//
-//        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

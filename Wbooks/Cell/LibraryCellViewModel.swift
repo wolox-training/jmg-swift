@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LibraryCellViewModel {
+struct LibraryCellViewModel {
     
     // MARK: Properties
     private let book: Book
