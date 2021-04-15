@@ -12,17 +12,6 @@ final class MainViewController: UIViewController {
 
     // MARK: Properties
     private lazy var mainView: MainView = MainView()
-    private var viewModel = MainViewModel()
-    
-    // MARK: Initializers
-    init(viewModel: MainViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: .none, bundle: .none)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     // MARK: Lifecycle methods
     override func loadView() {
