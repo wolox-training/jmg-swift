@@ -15,7 +15,8 @@ final class TabBarController: UITabBarController {
         
         tabBar.barTintColor = .white
 
-        let library = NavigationController(rootViewController: LibraryController())
+        let libraryController = LibraryController(viewModel: LibraryViewModel())
+        let library = NavigationController(rootViewController: libraryController)
         let wishlist  = UIViewController()
         let addNew = UIViewController()
         let rentals = UIViewController()

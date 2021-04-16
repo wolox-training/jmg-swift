@@ -5,11 +5,14 @@
 //  Created by Juan Martín Gordo on 06/04/2021.
 //
 
+import Foundation
 import UIKit
 
 final class MainViewController: UIViewController {
 
+    // MARK: Properties
     private lazy var mainView: MainView = MainView()
+    private let mainViewModel = MainViewModel()
 
     // MARK: Lifecycle methods
     override func loadView() {
@@ -18,6 +21,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainView.setup(with: mainViewModel)
         setupLoginButton()
     }
     
@@ -25,6 +29,7 @@ final class MainViewController: UIViewController {
         mainView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
+    // MARK: Navigation methods
     @objc private func loginButtonTapped() {
         let controller = TabBarController()
         controller.modalPresentationStyle = .fullScreen
