@@ -12,7 +12,7 @@ final class MainViewController: UIViewController {
 
     // MARK: Properties
     private lazy var mainView: MainView = MainView()
-    var mainViewModel = MainViewModel()
+    private let mainViewModel = MainViewModel()
 
     // MARK: Lifecycle methods
     override func loadView() {
@@ -21,7 +21,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup(with: mainViewModel)
+        mainView.setup(with: mainViewModel)
         setupLoginButton()
     }
     
@@ -29,15 +29,7 @@ final class MainViewController: UIViewController {
         mainView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
-    func setup(with viewModel: MainViewModel) {
-        mainView.userLabel.text = mainViewModel.userLabelText
-        mainView.userInput.placeholder = mainViewModel.userInputPlaceholder
-        mainView.passwordLabel.text = mainViewModel.passwordLabelText
-        mainView.loginButton.setTitle(mainViewModel.loginButtonTitle, for: .normal)
-    }
-    
     // MARK: Navigation methods
-    
     @objc private func loginButtonTapped() {
         let controller = TabBarController()
         controller.modalPresentationStyle = .fullScreen

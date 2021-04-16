@@ -15,5 +15,12 @@ final class MainView: NibView {
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
+    
+    func setup(with viewModel: MainViewModel) {
+        userLabel.text = viewModel.userLabelText
+        userInput.placeholder = viewModel.userInputPlaceholder
+        passwordLabel.text = viewModel.passwordLabelText
+        loginButton.setTitle(viewModel.loginButtonTitle, for: .normal)
+    }
 
 }
