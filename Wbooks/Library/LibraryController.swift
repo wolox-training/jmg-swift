@@ -27,7 +27,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDelegates()
+        setupView()
     }
     
     override func loadView() {
@@ -52,7 +52,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         )
     }
     
-    private func setupDelegates() {
+    private func setupView() {
         let nib = UINib(nibName: "LibraryCell", bundle: nil)
         libraryView.booksTable.register(nib, forCellReuseIdentifier: LibraryCell.identifier)
         libraryView.booksTable.delegate = self

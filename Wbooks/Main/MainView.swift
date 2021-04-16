@@ -11,15 +11,6 @@ import UIKit
 final class MainView: NibView {
     
     // MARK: Properties
-    var mainViewModel: MainViewModel! {
-        didSet {
-            userLabel.text = mainViewModel.userLabelText
-            userInput.placeholder = mainViewModel.userInputPlaceholder
-            passwordLabel.text = mainViewModel.passwordLabelText
-            loginButton.setTitle(mainViewModel.loginButtonTitle, for: .normal)
-        }
-    }
-    
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var passwordLabel: UILabel!

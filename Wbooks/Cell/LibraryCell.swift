@@ -12,14 +12,6 @@ class LibraryCell: UITableViewCell {
     // MARK: Properties
     static let identifier = "LibraryCell"
     
-    var libraryCellViewModel: LibraryCellViewModel! {
-        didSet {
-            titleLabel.text = libraryCellViewModel.title
-            authorLabel.text = libraryCellViewModel.author
-            coverImage.image = libraryCellViewModel.cover
-        }
-    }
-    
     @IBOutlet weak var cellView: UIView! {
         didSet {
             cellView.layer.cornerRadius = 10
