@@ -10,7 +10,7 @@ import UIKit
 extension UIImageView {
     func load(stringURL: String) {
         guard let url = URL(string: stringURL) else {
-            print("No URL here")
+            print("No URL Here")
             return
         }
         DispatchQueue.global().async { [weak self] in
@@ -23,5 +23,12 @@ extension UIImageView {
             }
         }
     }
+    
+    /* func stringToURL(stringURL: String) -> URL {
+        guard let convertedString = URL(string: stringURL) else {
+            return URL(string: "https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png")!
+        }
+        return convertedString
+    }*/
 
 }
