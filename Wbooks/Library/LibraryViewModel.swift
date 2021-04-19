@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
-struct LibraryViewModel {
+class LibraryViewModel {
     
     // MARK: Properties
     let repository =  BookRepository()
-    private let booksArray : [Book] = []
+    var booksArray : [Book] = []
+    
     
     // MARK: Presentation
     var bookCount: Int {
@@ -27,13 +28,14 @@ struct LibraryViewModel {
     
     // MARK: API Requests
     func getBooks() {
-        let onSuccess = { books in
-            print(books)
-            // fill booksArray from JSON
+        let onSuccess: ([Book]) -> Void = { books in
+            self.booksArray = books
+
         }
-        let onError = { error in
+        let onError: (Error) -> Void = { error in
             print(error)
             // display error alert (UIAlertController?)
+            // LibraryController(viewModel: LibraryViewModel()).displayAlert()
         }
         repository.fetchBooks(onSuccess: onSuccess, onError: onError)
     }

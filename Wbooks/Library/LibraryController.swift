@@ -29,6 +29,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         setupView()
         viewModel.getBooks()
+        print(viewModel.booksArray)
     }
     
     override func loadView() {
