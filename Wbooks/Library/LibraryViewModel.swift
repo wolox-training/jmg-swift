@@ -30,7 +30,7 @@ class LibraryViewModel {
     func getBooks() {
         let onSuccess: ([Book]) -> Void = { books in
             self.booksArray = books
-
+            print("Books retrieved from API")
         }
         let onError: (Error) -> Void = { error in
             print(error)

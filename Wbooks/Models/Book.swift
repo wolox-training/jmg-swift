@@ -23,6 +23,7 @@ struct Book: Codable {
         case image = "image"
     }
     
+    // MARK: Inizialization
     public init(from: Decoder) {
         let container = try! from.container(keyedBy: BookKey.self)
         id = try! container.decode(Int.self, forKey: .id)

@@ -27,9 +27,8 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         viewModel.getBooks()
-        print(viewModel.booksArray)
+        setupView()
     }
     
     override func loadView() {
@@ -92,6 +91,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     @objc private func searchTapped() {
         // Switch to search view
+        libraryView.booksTable.reloadData()
     }
     
     private func cellTapped() {
