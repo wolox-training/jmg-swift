@@ -28,6 +28,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        viewModel.getBooks()
     }
     
     override func loadView() {

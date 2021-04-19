@@ -11,22 +11,8 @@ import UIKit
 struct LibraryViewModel {
     
     // MARK: Properties
-    private let booksArray : [Book] = [
-        Book(cover: UIImage(named: "BookCover1")!,
-             title: "A Little Bird Told Me",
-             author: "Timothy Cross"),
-        Book(cover: UIImage(named: "BookCover2")!,
-             title: "When the Doves Disappeared",
-             author: "Sofi Oksanen"),
-        Book(cover: UIImage(named: "BookCover3")!,
-             title: "The Best Book in the World",
-             author: "Peter Sjernstrom"),
-        Book(cover: UIImage(named: "BookCover4")!,
-             title: "Be Creative",
-             author: "Tony Alcazar"),
-        Book(cover: UIImage(named: "BookCover5")!,
-             title: "Redesign the Web",
-             author: "Liliana Castilla")]
+    let repository =  BookRepository()
+    private let booksArray : [Book] = []
     
     // MARK: Presentation
     var bookCount: Int {
@@ -38,4 +24,18 @@ struct LibraryViewModel {
         let book = booksArray[index]
         return LibraryCellViewModel(book: book)
     }
+    
+    // MARK: API Requests
+    func getBooks() {
+        let onSuccess = { books in
+            print(books)
+            // fill booksArray from JSON
+        }
+        let onError = { error in
+            print(error)
+            // display error alert (UIAlertController?)
+        }
+        repository.fetchBooks(onSuccess: onSuccess, onError: onError)
+    }
+    
 }
