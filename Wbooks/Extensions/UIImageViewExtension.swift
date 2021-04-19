@@ -23,12 +23,5 @@ extension UIImageView {
             }
         }
     }
-    
-    /* func stringToURL(stringURL: String) -> URL {
-        guard let convertedString = URL(string: stringURL) else {
-            return URL(string: "https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder.png")!
-        }
-        return convertedString
-    }*/
 
 }
