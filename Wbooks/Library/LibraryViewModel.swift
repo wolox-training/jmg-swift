@@ -28,8 +28,8 @@ class LibraryViewModel {
     
     // MARK: API Requests
     func getBooks(onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
-        repository.fetchBooks(onSuccess: { books in
-            self.booksArray = books
+        repository.fetchBooks(onSuccess: { [weak self] (books) -> Void in
+            self?.booksArray = books
             onSuccess()
         }, onError: { error in
             onError()

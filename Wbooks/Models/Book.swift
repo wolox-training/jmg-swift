@@ -23,15 +23,4 @@ struct Book: Codable {
         case image = "image"
     }
     
-    // MARK: Inizialization
-    public init(from: Decoder) {
-        let container = try! from.container(keyedBy: BookKey.self)
-        id = try! container.decode(Int.self, forKey: .id)
-        title = try! container.decode(String.self, forKey: .title)
-        author = try! container.decode(String.self, forKey: .author)
-        genre = try! container.decode(String.self, forKey: .genre)
-        year = try! container.decode(String.self, forKey: .year)
-        image = try! container.decode(String.self, forKey: .image)
-    }
-    
 }

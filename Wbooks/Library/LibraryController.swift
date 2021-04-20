@@ -14,6 +14,10 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     private lazy var libraryView: LibraryView = LibraryView()
     private var viewModel = LibraryViewModel()
     
+    let errorTitle = NSLocalizedString("ALERT_BOX.TITLE", comment: "Title for the error alert box")
+    let errorMessage = NSLocalizedString("ALERT_BOX.MESSAGE", comment: "Message detailing an error in the alert box")
+    let errorDismiss = NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box")
+    
     // MARK: Initializers
     init(viewModel: LibraryViewModel) {
         self.viewModel = viewModel
@@ -63,12 +67,12 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     /// Gets books from an API request or displays an error message
     private func loadBooks() {
-        viewModel.getBooks(onSuccess: {
-            self.libraryView.booksTable.reloadData()
-        }, onError: {
-            let alertController = UIAlertController(title: NSLocalizedString("ALERT_BOX.TITLE", comment: "Title for the error alert box"), message: NSLocalizedString("ALERT_BOX.MESSAGE", comment: "Message detailing an error in the alert box"), preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box"), style: .default, handler: nil))
-            self.present(alertController, animated: true)
+        viewModel.getBooks(onSuccess: { [weak self] in
+            self?.libraryView.booksTable.reloadData()
+        }, onError: { [weak self] in
+            let alertController = UIAlertController(title: self?.errorTitle, message: self?.errorMessage, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: self?.errorDismiss, style: .default, handler: nil))
+            self?.present(alertController, animated: true)
         })
     }
     
