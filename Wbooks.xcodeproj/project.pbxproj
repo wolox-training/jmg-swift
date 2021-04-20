@@ -63,9 +63,6 @@
 		8571F9EC64ECF8E76D463F8F /* Pods-Wbooks-WbooksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks-WbooksUITests.release.xcconfig"; path = "Target Support Files/Pods-Wbooks-WbooksUITests/Pods-Wbooks-WbooksUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A0222DE8262DD51A005C8BEE /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		A0222DEE262DF2B4005C8BEE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
-		A041732A261E0B27004EAF62 /* BaseConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = BaseConfiguration.xcconfig; path = ConfigurationFiles/BaseConfiguration.xcconfig; sourceTree = "<group>"; };
-		A041732B261E0B45004EAF62 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ConfigurationFiles/Debug.xcconfig; sourceTree = "<group>"; };
-		A041732C261E0B67004EAF62 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ConfigurationFiles/Release.xcconfig; sourceTree = "<group>"; };
 		A0417384261E2CC8004EAF62 /* LibraryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryView.xib; sourceTree = "<group>"; };
 		A0417389261E2CF2004EAF62 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		A042B51A261F6EB40039CF73 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
@@ -183,9 +180,6 @@
 		A054A590261B4AC40092926E = {
 			isa = PBXGroup;
 			children = (
-				A041732A261E0B27004EAF62 /* BaseConfiguration.xcconfig */,
-				A041732B261E0B45004EAF62 /* Debug.xcconfig */,
-				A041732C261E0B67004EAF62 /* Release.xcconfig */,
 				A054A59B261B4AC40092926E /* Wbooks */,
 				A054A5B2261B4AC50092926E /* WbooksTests */,
 				A054A5BD261B4AC50092926E /* WbooksUITests */,
@@ -619,7 +613,6 @@
 /* Begin XCBuildConfiguration section */
 		A054A5C1261B4AC50092926E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A041732B261E0B45004EAF62 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -682,7 +675,6 @@
 		};
 		A054A5C2261B4AC50092926E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A041732C261E0B67004EAF62 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
