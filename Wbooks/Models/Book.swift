@@ -14,13 +14,4 @@ struct Book: Codable {
     let id: Int
     let title, author, genre, year, image: String
     
-    enum BookKey: String, CodingKey {
-        case id = "id"
-        case title = "title"
-        case author = "author"
-        case genre = "genre"
-        case year = "year"
-        case image = "image"
-    }
-    
 }
