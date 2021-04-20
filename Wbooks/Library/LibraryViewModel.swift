@@ -11,9 +11,13 @@ import UIKit
 class LibraryViewModel {
     
     // MARK: Properties
-    let repository =  BookRepository()
+    private let repository: BookRepositoryType
     var booksArray : [Book] = []
     
+    // MARK: Inizialization
+    init(repository: BookRepositoryType = BookRepository()) {
+        self.repository = repository
+    }
     
     // MARK: Presentation
     var bookCount: Int {
