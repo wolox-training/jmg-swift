@@ -27,17 +27,13 @@ class LibraryViewModel {
     }
     
     // MARK: API Requests
-    func getBooks() {
-        let onSuccess: ([Book]) -> Void = { books in
+    func getBooks(onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+        repository.fetchBooks(onSuccess: { books in
             self.booksArray = books
-            print("Books retrieved from API")
-        }
-        let onError: (Error) -> Void = { error in
-            print(error)
-            // display error alert (UIAlertController?)
-            // LibraryController(viewModel: LibraryViewModel()).displayAlert()
-        }
-        repository.fetchBooks(onSuccess: onSuccess, onError: onError)
+            onSuccess()
+        }, onError: { error in
+            onError()
+        })
     }
     
 }

@@ -21,3 +21,8 @@
 "TAB_BAR.ADDNEW_BUTTON_TITLE" = "Add New";
 "TAB_BAR.RENTALS_BUTTON_TITLE" = "Rentals";
 "TAB_BAR.SETTINGS_BUTTON_TITLE" = "Settings";
+
+/* ALERT BOX */
+"ALERT_BOX.TITLE" = "Error";
+"ALERT_BOX.MESSAGE" = "An error has occurred.";
+"ALERT_BOX.BUTTON" = "Ok";

@@ -27,8 +27,8 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getBooks()
         setupView()
+        loadBooks()
     }
     
     override func loadView() {
@@ -53,11 +53,23 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         )
     }
     
+    /// Sets up the view for the table that will be displaying the books
     private func setupView() {
         let nib = UINib(nibName: "LibraryCell", bundle: nil)
         libraryView.booksTable.register(nib, forCellReuseIdentifier: LibraryCell.identifier)
         libraryView.booksTable.delegate = self
         libraryView.booksTable.dataSource = self
+    }
+    
+    /// Gets books from an API request or displays an error message
+    private func loadBooks() {
+        viewModel.getBooks(onSuccess: {
+            self.libraryView.booksTable.reloadData()
+        }, onError: {
+            let alertController = UIAlertController(title: NSLocalizedString("ALERT_BOX.TITLE", comment: "Title for the error alert box"), message: NSLocalizedString("ALERT_BOX.MESSAGE", comment: "Message detailing an error in the alert box"), preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box"), style: .default, handler: nil))
+            self.present(alertController, animated: true)
+        })
     }
     
     // MARK: UITableView delegate
@@ -91,7 +103,6 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     @objc private func searchTapped() {
         // Switch to search view
-        libraryView.booksTable.reloadData()
     }
     
     private func cellTapped() {
