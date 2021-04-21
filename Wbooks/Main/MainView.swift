@@ -5,7 +5,6 @@
 //  Created by Juan Martín Gordo on 06/04/2021.
 //
 
-import Foundation
 import UIKit
 
 final class MainView: NibView {
