@@ -54,6 +54,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
             target: self,
             action: #selector(notificationsTapped)
         )
+        navigationItem.backButtonTitle = ""
     }
     
     /// Sets up the view for the table that will be displaying the books
@@ -110,6 +111,9 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     
     private func cellTapped() {
         // Transition to book detail view
+        let controller = DetailViewController(viewModel: DetailViewModel())
+        controller.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }
