@@ -14,6 +14,10 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     private lazy var libraryView: LibraryView = LibraryView()
     private var viewModel = LibraryViewModel()
     
+    let errorTitle = NSLocalizedString("ALERT_BOX.TITLE", comment: "Title for the error alert box")
+    let errorMessage = NSLocalizedString("ALERT_BOX.MESSAGE", comment: "Message detailing an error in the alert box")
+    let errorDismiss = NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box")
+    
     // MARK: Initializers
     init(viewModel: LibraryViewModel) {
         self.viewModel = viewModel
@@ -28,6 +32,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        loadBooks()
     }
     
     override func loadView() {
@@ -52,11 +57,23 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         )
     }
     
+    /// Sets up the view for the table that will be displaying the books
     private func setupView() {
         let nib = UINib(nibName: "LibraryCell", bundle: nil)
         libraryView.booksTable.register(nib, forCellReuseIdentifier: LibraryCell.identifier)
         libraryView.booksTable.delegate = self
         libraryView.booksTable.dataSource = self
+    }
+    
+    /// Gets books from an API request or displays an error message
+    private func loadBooks() {
+        viewModel.getBooks(onSuccess: { [weak self] in
+            self?.libraryView.booksTable.reloadData()
+        }, onError: { [weak self] in
+            let alertController = UIAlertController(title: self?.errorTitle, message: self?.errorMessage, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: self?.errorDismiss, style: .default, handler: nil))
+            self?.present(alertController, animated: true)
+        })
     }
     
     // MARK: UITableView delegate

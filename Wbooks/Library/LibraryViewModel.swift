@@ -8,25 +8,16 @@
 import Foundation
 import UIKit
 
-struct LibraryViewModel {
+class LibraryViewModel {
     
     // MARK: Properties
-    private let booksArray : [Book] = [
-        Book(cover: UIImage(named: "BookCover1")!,
-             title: "A Little Bird Told Me",
-             author: "Timothy Cross"),
-        Book(cover: UIImage(named: "BookCover2")!,
-             title: "When the Doves Disappeared",
-             author: "Sofi Oksanen"),
-        Book(cover: UIImage(named: "BookCover3")!,
-             title: "The Best Book in the World",
-             author: "Peter Sjernstrom"),
-        Book(cover: UIImage(named: "BookCover4")!,
-             title: "Be Creative",
-             author: "Tony Alcazar"),
-        Book(cover: UIImage(named: "BookCover5")!,
-             title: "Redesign the Web",
-             author: "Liliana Castilla")]
+    private let repository: BookRepositoryType
+    var booksArray : [Book] = []
+    
+    // MARK: Inizialization
+    init(repository: BookRepositoryType = BookRepository()) {
+        self.repository = repository
+    }
     
     // MARK: Presentation
     var bookCount: Int {
@@ -38,4 +29,15 @@ struct LibraryViewModel {
         let book = booksArray[index]
         return LibraryCellViewModel(book: book)
     }
+    
+    // MARK: API Requests
+    func getBooks(onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+        repository.fetchBooks(onSuccess: { [weak self] (books) -> Void in
+            self?.booksArray = books
+            onSuccess()
+        }, onError: { error in
+            onError()
+        })
+    }
+    
 }

@@ -31,7 +31,7 @@ class LibraryCell: UITableViewCell {
     
     // MARK: Public interface
     func setup(with viewModel: LibraryCellViewModel) {
-        coverImage.image = viewModel.cover
+        coverImage.load(stringURL: viewModel.cover)
         titleLabel.text = viewModel.title
         authorLabel.text = viewModel.author
     }

@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-struct Book {
+struct Book: Codable {
     
     // MARK: Properties
-    let cover: UIImage
-    let title, author: String
+    let id: Int
+    let title, author, genre, year, image: String
     
 }

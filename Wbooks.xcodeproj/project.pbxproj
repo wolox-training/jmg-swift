@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2BD20C9D87C530596116E85F /* Pods_Wbooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F7571156349EF7DA93FB8D /* Pods_Wbooks.framework */; };
 		52502D460CC570604C8A5908 /* Pods_Wbooks_WbooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F882ED81AD8D8B6D5BD2B7 /* Pods_Wbooks_WbooksUITests.framework */; };
+		A0222DE9262DD51A005C8BEE /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0222DE8262DD51A005C8BEE /* BookRepository.swift */; };
+		A0222DEF262DF2B4005C8BEE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0222DEE262DF2B4005C8BEE /* UIImageViewExtension.swift */; };
 		A0417385261E2CC8004EAF62 /* LibraryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0417384261E2CC8004EAF62 /* LibraryView.xib */; };
 		A041738A261E2CF2004EAF62 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0417389261E2CF2004EAF62 /* LibraryView.swift */; };
 		A042B51C261F6EB40039CF73 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042B51A261F6EB40039CF73 /* LibraryCell.swift */; };
@@ -59,6 +61,8 @@
 		6822E8920181DCD5FEF2755C /* Pods_WbooksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WbooksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B9CF8A99B83C1F7131F1D4 /* Pods-WbooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbooksTests.release.xcconfig"; path = "Target Support Files/Pods-WbooksTests/Pods-WbooksTests.release.xcconfig"; sourceTree = "<group>"; };
 		8571F9EC64ECF8E76D463F8F /* Pods-Wbooks-WbooksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks-WbooksUITests.release.xcconfig"; path = "Target Support Files/Pods-Wbooks-WbooksUITests/Pods-Wbooks-WbooksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A0222DE8262DD51A005C8BEE /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		A0222DEE262DF2B4005C8BEE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		A041732A261E0B27004EAF62 /* BaseConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = BaseConfiguration.xcconfig; path = ConfigurationFiles/BaseConfiguration.xcconfig; sourceTree = "<group>"; };
 		A041732B261E0B45004EAF62 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ConfigurationFiles/Debug.xcconfig; sourceTree = "<group>"; };
 		A041732C261E0B67004EAF62 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ConfigurationFiles/Release.xcconfig; sourceTree = "<group>"; };
@@ -136,6 +140,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A0222DED262DF298005C8BEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A0222DEE262DF2B4005C8BEE /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A042B521261F7C310039CF73 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +208,7 @@
 		A054A59B261B4AC40092926E /* Wbooks */ = {
 			isa = PBXGroup;
 			children = (
+				A0222DED262DF298005C8BEE /* Extensions */,
 				A06C2451262875AA00BF0D18 /* Models */,
 				A07E2CAC2620F02A004276CF /* Navigation */,
 				A042B523261F7C6C0039CF73 /* Cell */,
@@ -209,6 +222,7 @@
 				A054A5A7261B4AC50092926E /* LaunchScreen.storyboard */,
 				A054A5AA261B4AC50092926E /* Info.plist */,
 				A0A3161D2624F04600CC4870 /* Localization */,
+				A0222DE8262DD51A005C8BEE /* BookRepository.swift */,
 			);
 			path = Wbooks;
 			sourceTree = "<group>";
@@ -532,6 +546,7 @@
 			files = (
 				A07E2CAF2620F047004276CF /* NavigationController.swift in Sources */,
 				A041738A261E2CF2004EAF62 /* LibraryView.swift in Sources */,
+				A0222DEF262DF2B4005C8BEE /* UIImageViewExtension.swift in Sources */,
 				A072D943261CF4C3002DBD0F /* MainView.swift in Sources */,
 				A054A59D261B4AC40092926E /* AppDelegate.swift in Sources */,
 				A05ABAA2261CC3B40080619A /* Enviroment.swift in Sources */,
@@ -540,6 +555,7 @@
 				A042B51C261F6EB40039CF73 /* LibraryCell.swift in Sources */,
 				A08D7CAB2625EFFC00F27738 /* TabBarController.swift in Sources */,
 				A072D93E261CF476002DBD0F /* MainViewController.swift in Sources */,
+				A0222DE9262DD51A005C8BEE /* BookRepository.swift in Sources */,
 				A054A59F261B4AC40092926E /* SceneDelegate.swift in Sources */,
 				A06C24562628771300BF0D18 /* LibraryCellViewModel.swift in Sources */,
 				A09AE8AE261F559700F8B1F9 /* LibraryController.swift in Sources */,

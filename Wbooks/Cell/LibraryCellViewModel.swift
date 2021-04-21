@@ -18,8 +18,8 @@ struct LibraryCellViewModel {
     }
     
     // MARK: Presentation
-    var cover: UIImage {
-        book.cover
+    var cover: String {
+        book.image
     }
     
     var title: String {
