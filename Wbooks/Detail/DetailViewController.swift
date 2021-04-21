@@ -8,18 +8,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
+
     // MARK: Properties
     private lazy var detailView: DetailView = DetailView()
     private var viewModel = DetailViewModel()
     private let bookDetailController = BookDetailController()
-    
+
     // MARK: Initializers
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: .none, bundle: .none)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -27,12 +27,12 @@ class DetailViewController: UIViewController {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         load(childViewController: bookDetailController, into: detailView.bookDetailContainer)
     }
-    
+
     override func loadView() {
         view = detailView
-        setupNavBar()
     }
 
     private func setupNavBar() {

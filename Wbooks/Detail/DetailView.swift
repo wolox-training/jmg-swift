@@ -8,6 +8,5 @@
 import UIKit
 
 final class DetailView: NibView {
-    
     @IBOutlet weak var bookDetailContainer: UIView!
 }

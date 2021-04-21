@@ -8,7 +8,7 @@
 import Alamofire
 
 struct BookRepository: BookRepositoryType {
-    
+
     func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void) {
         let url = URL(string: "https://ios-training-backend.herokuapp.com/api/v1/books")!
         AF.request(url, method: .get).responseJSON { response in
@@ -25,15 +25,15 @@ struct BookRepository: BookRepositoryType {
                 }
         }
     }
-    
+
     enum BookError: Error {
         case decodeError
     }
-    
+
 }
 
 protocol BookRepositoryType {
-    
+
     func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void)
-    
+
 }

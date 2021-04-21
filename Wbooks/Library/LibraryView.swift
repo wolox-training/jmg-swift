@@ -7,9 +7,8 @@
 
 import UIKit
 
-
 final class LibraryView: NibView {
-    
+
     // MARK: Properties
     @IBOutlet weak var booksTable: UITableView!
 

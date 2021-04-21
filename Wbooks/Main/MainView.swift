@@ -8,13 +8,13 @@
 import UIKit
 
 final class MainView: NibView {
-    
+
     // MARK: Properties
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
-    
+
     func setup(with viewModel: MainViewModel) {
         userLabel.text = viewModel.userLabelText
         userInput.placeholder = viewModel.userInputPlaceholder

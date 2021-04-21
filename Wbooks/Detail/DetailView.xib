@@ -23,8 +23,8 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4BP-kz-Abg" customClass="BookDetailView" customModule="Wbooks" customModuleProvider="target">
-                    <rect key="frame" x="20" y="108" width="374" height="128"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4BP-kz-Abg">
+                    <rect key="frame" x="20" y="108" width="374" height="628"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
@@ -32,6 +32,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="4BP-kz-Abg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2sq-ca-siG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4BP-kz-Abg" secondAttribute="bottom" id="DbN-ej-XLm"/>
                 <constraint firstItem="c9X-ur-4fS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-2" id="IWG-o4-m9F"/>
                 <constraint firstItem="c9X-ur-4fS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-2" id="ZGd-Fo-cU0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4BP-kz-Abg" secondAttribute="trailing" constant="20" id="abW-8M-uMu"/>
