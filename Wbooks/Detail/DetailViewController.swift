@@ -11,13 +11,16 @@ class DetailViewController: UIViewController {
 
     // MARK: Properties
     private lazy var detailView: DetailView = DetailView()
-    private var viewModel = DetailViewModel()
-    private let bookDetailController = BookDetailController()
+    private var viewModel: DetailViewModel
+    private let bookDetailsController: BookDetailController
 
     // MARK: Initializers
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
+        let bookDetailsViewModel = viewModel.createBookDetailsViewModel()
+        bookDetailsController = BookDetailController(viewModel: bookDetailsViewModel)
         super.init(nibName: .none, bundle: .none)
+        
     }
 
     required init?(coder: NSCoder) {
@@ -28,7 +31,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        load(childViewController: bookDetailController, into: detailView.bookDetailContainer)
+        load(childViewController: bookDetailsController, into: detailView.bookDetailContainer)
     }
 
     override func loadView() {

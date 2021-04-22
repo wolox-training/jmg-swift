@@ -11,6 +11,6 @@ struct Book: Codable {
 
     // MARK: Properties
     let id: Int
-    let title, author, genre, year, image: String
+    let title, author, genre, year, image, status: String
 
 }

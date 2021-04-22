@@ -97,7 +97,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        cellTapped()
+        cellTapped(index: indexPath)
     }
 
     // MARK: Navigation methods
@@ -109,9 +109,10 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
         // Switch to search view
     }
 
-    private func cellTapped() {
+    private func cellTapped(index: IndexPath) {
         // Transition to book detail view
-        let controller = DetailViewController(viewModel: DetailViewModel())
+        let detailsViewModel = viewModel.createDetailViewModel(for: index.row)
+        let controller = DetailViewController(viewModel: detailsViewModel)
         controller.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(controller, animated: true)
     }

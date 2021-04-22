@@ -28,7 +28,12 @@ class LibraryViewModel {
         let book = booksArray[index]
         return LibraryCellViewModel(book: book)
     }
-
+    
+    func createDetailViewModel(for index: Int) -> DetailViewModel {
+        let book = booksArray[index]
+        return DetailViewModel(book: book)
+    }
+    
     // MARK: API Requests
     func getBooks(onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
         repository.fetchBooks(onSuccess: { [weak self] (books) -> Void in

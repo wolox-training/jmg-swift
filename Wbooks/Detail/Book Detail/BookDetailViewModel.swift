@@ -38,6 +38,8 @@ struct BookDetailViewModel {
         book.genre
     }
 
-    // var availability: Bool
+    var status: String{
+        book.status
+    }
 
 }
