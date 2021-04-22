@@ -295,8 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				A08F9B9626307BCF00B6CCEC /* BookDetailView.swift */,
-				A08F9B9B26307BDD00B6CCEC /* BookDetailViewModel.swift */,
 				A08F9BA026307BE800B6CCEC /* BookDetailView.xib */,
+				A08F9B9B26307BDD00B6CCEC /* BookDetailViewModel.swift */,
 				A08F9BA826307C7800B6CCEC /* BookDetailController.swift */,
 			);
 			path = "Book Detail";

@@ -14,7 +14,7 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     private var viewModel = LibraryViewModel()
 
     let errorTitle = NSLocalizedString("ALERT_BOX.TITLE", comment: "Title for the error alert box")
-    let errorMessage = NSLocalizedString("ALERT_BOX.MESSAGE", comment: "Message detailing an error in the alert box")
+    let errorMessage = NSLocalizedString("ALERT_BOX.ERROR_MESSAGE", comment: "Message detailing an error in the alert box")
     let errorDismiss = NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box")
 
     // MARK: Initializers

@@ -41,16 +41,21 @@ class BookDetailView: NibView {
         authorLabel.text = viewModel.author
         yearLabel.text = viewModel.year
         genreLabel.text = viewModel.genre
-        availabilityLabel.text = viewModel.status
         
-        if viewModel.status == "Available" {
-            availabilityLabel.textColor = UIColor(named: "AvailableGreen")
-        } else {
-            availabilityLabel.textColor = UIColor(named: "UnavailableRed")
-        }
+        displayAvailability(with: viewModel)
         
         addToWishlistButton.setTitle(viewModel.wishlistButtonText, for: .normal)
         rentButton.setTitle(viewModel.rentButtonText, for: .normal)
+    }
+    
+    private func displayAvailability(with viewModel: BookDetailViewModel) {
+        if viewModel.status == "Available" {
+            availabilityLabel.text = NSLocalizedString("DETAIL_VIEW.BOOK_IS_AVAILABLE", comment: "Label text when a book is available for rent")
+            availabilityLabel.textColor = UIColor(named: "AvailableGreen")
+        } else {
+            availabilityLabel.text = NSLocalizedString("DETAIL_VIEW.BOOK_IS_UNAVAILABLE", comment: "Label text when a book is not available for rent")
+            availabilityLabel.textColor = UIColor(named: "UnavailableRed")
+        }
     }
     
 }
