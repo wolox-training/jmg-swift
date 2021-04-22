@@ -14,8 +14,7 @@ class BookDetailView: NibView {
     
     @IBOutlet weak var bookDetailsViewContainer: UIView! {
         didSet {
-            bookDetailsViewContainer.layer.cornerRadius = 30
-            bookDetailsViewContainer.layer.masksToBounds = false
+            bookDetailsViewContainer.layer.cornerRadius = 10
         }
     }
     
@@ -45,7 +44,7 @@ class BookDetailView: NibView {
         genreLabel.text = viewModel.genre
         availabilityLabel.text = viewModel.status
         
-        if availabilityLabel.text == "Available" {
+        if viewModel.status == "Available" {
             availabilityLabel.textColor = UIColor(named: "Available Green")
         } else {
             availabilityLabel.textColor = .red

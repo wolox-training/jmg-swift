@@ -11,6 +11,7 @@ class LibraryCell: UITableViewCell {
 
     // MARK: Properties
     static let identifier = "LibraryCell"
+    private var request: DispatchWorkItem?
 
     @IBOutlet weak var cellView: UIView! {
         didSet {
@@ -28,10 +29,17 @@ class LibraryCell: UITableViewCell {
         self.backgroundView = UIView()
         self.selectedBackgroundView = UIView()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        request?.cancel()
+        request = nil
+        coverImage.image = UIImage(named: "PlaceholderCover")
+    }
 
     // MARK: Public interface
     func setup(with viewModel: LibraryCellViewModel) {
-        coverImage.load(stringURL: viewModel.cover)
+        request = coverImage.load(stringURL: viewModel.cover)
         titleLabel.text = viewModel.title
         authorLabel.text = viewModel.author
     }
