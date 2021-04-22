@@ -17,7 +17,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rty-2u-N6B">
                     <rect key="frame" x="16" y="8" width="382" height="109"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookCover1" translatesAutoresizingMaskIntoConstraints="NO" id="ety-1h-8bt">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceholderCover" translatesAutoresizingMaskIntoConstraints="NO" id="ety-1h-8bt">
                             <rect key="frame" x="24" y="12" width="85" height="85"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="ety-1h-8bt" secondAttribute="height" multiplier="1:1" id="5ve-ax-tlw"/>
@@ -72,7 +72,7 @@
         </view>
     </objects>
     <resources>
-        <image name="BookCover1" width="40" height="60"/>
+        <image name="PlaceholderCover" width="42.666667938232422" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
