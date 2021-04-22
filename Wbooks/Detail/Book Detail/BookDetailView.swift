@@ -9,10 +9,13 @@ import UIKit
 
 class BookDetailView: NibView {
     
-    // MARK: Properties    
+    // MARK: Properties
+    let availableGreen = UIColor(red: 165, green: 205, blue: 57, alpha: 1)
+    
     @IBOutlet weak var bookDetailsViewContainer: UIView! {
         didSet {
-            bookDetailsViewContainer.layer.cornerRadius = 10
+            bookDetailsViewContainer.layer.cornerRadius = 30
+            bookDetailsViewContainer.layer.masksToBounds = false
         }
     }
     
@@ -22,7 +25,6 @@ class BookDetailView: NibView {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
-    
     
     @IBOutlet weak var addToWishlistButton: UIButton!
     @IBOutlet weak var rentButton: UIButton!
@@ -41,7 +43,14 @@ class BookDetailView: NibView {
         authorLabel.text = viewModel.author
         yearLabel.text = viewModel.year
         genreLabel.text = viewModel.genre
-        availabilityLabel.text = "To be set"
+        availabilityLabel.text = viewModel.status
+        
+        if availabilityLabel.text == "Available" {
+            availabilityLabel.textColor = UIColor(named: "Available Green")
+        } else {
+            availabilityLabel.textColor = .red
+        }
+        
         addToWishlistButton.setTitle(viewModel.wishlistButtonText, for: .normal)
         rentButton.setTitle(viewModel.rentButtonText, for: .normal)
     }

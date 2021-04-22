@@ -84,6 +84,7 @@
                             <state key="normal" title="Rent"/>
                         </button>
                     </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="Ky6-tR-DVo" firstAttribute="leading" secondItem="F6e-fG-8sE" secondAttribute="trailing" id="0Sp-G2-eLU"/>
                         <constraint firstItem="sBe-FI-f9V" firstAttribute="top" secondItem="F6e-fG-8sE" secondAttribute="bottom" constant="16" id="50b-nv-eGx"/>
@@ -106,7 +107,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="c37-zi-aIW"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="1Oj-zy-qPH" firstAttribute="leading" secondItem="c37-zi-aIW" secondAttribute="leading" id="Bsz-Qh-5aa"/>
                 <constraint firstItem="1Oj-zy-qPH" firstAttribute="top" secondItem="c37-zi-aIW" secondAttribute="top" id="FA2-Lc-h48"/>

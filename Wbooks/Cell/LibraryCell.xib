@@ -68,7 +68,7 @@
                 <outlet property="coverImage" destination="ety-1h-8bt" id="SQy-zb-brL"/>
                 <outlet property="titleLabel" destination="zdp-1Q-F5V" id="Yj9-Kl-zgT"/>
             </connections>
-            <point key="canvasLocation" x="-502.89855072463774" y="155.70652173913044"/>
+            <point key="canvasLocation" x="-502.89855072463774" y="155.29891304347828"/>
         </view>
     </objects>
     <resources>
