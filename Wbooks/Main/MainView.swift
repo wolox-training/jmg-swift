@@ -15,6 +15,7 @@ final class MainView: NibView {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
 
+    // MARK: Public interface
     func setup(with viewModel: MainViewModel) {
         userLabel.text = viewModel.userLabelText
         userInput.placeholder = viewModel.userInputPlaceholder

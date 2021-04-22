@@ -11,6 +11,8 @@ struct BookDetailViewModel {
 
     // MARK: Properties
     private let book: Book
+    let wishlistButtonText = NSLocalizedString("DETAIL_VIEW.WISHLIST_BUTTON_TITLE", comment: "")
+    let rentButtonText = NSLocalizedString("DETAIL_VIEW.RENT_BUTTON_TITLE", comment: "")
 
     init(book: Book) {
         self.book = book

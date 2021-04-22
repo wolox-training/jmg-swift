@@ -23,6 +23,11 @@ class BookDetailView: NibView {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     
+    
+    @IBOutlet weak var addToWishlistButton: UIButton!
+    @IBOutlet weak var rentButton: UIButton!
+    
+    
     // MARK: Actions
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +43,8 @@ class BookDetailView: NibView {
         yearLabel.text = viewModel.year
         genreLabel.text = viewModel.genre
         availabilityLabel.text = "To be set"
+        addToWishlistButton.setTitle(viewModel.wishlistButtonText, for: .normal)
+        rentButton.setTitle(viewModel.rentButtonText, for: .normal)
     }
     
 }
