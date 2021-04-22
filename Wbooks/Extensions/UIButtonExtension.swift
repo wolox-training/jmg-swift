@@ -10,32 +10,51 @@ import UIKit
 extension UIButton {
     
     func setMainStyle() {
-        self.backgroundColor = .clear
-        self.layer.borderWidth = 0
+        setupStyle()
         self.setTitleColor(.white, for: .normal)
-        self.layer.cornerRadius = 15
-        self.clipsToBounds = true
         
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor(named: "Gradient First")?.cgColor, UIColor(named: "Gradient Last")?.cgColor]
+        gradientLayer.colors = [UIColor(named: "MainGradientFirst")?.cgColor, UIColor(named: "MainGradientLast")?.cgColor]
+        setupGradient(with: gradientLayer)
+    }
+    
+    func setSecondaryStyle() {
+        setupStyle()
+        self.setTitleColor(UIColor(named: "DefaultBlue"), for: .normal)
+        self.layer.borderColor = UIColor(named: "DefaultBlue")?.cgColor
+        self.layer.borderWidth = 1
+    }
+    
+    func setUnavailableStyle() {
+        setupStyle()
+        self.setTitleColor(.white, for: .normal)
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor(named: "UnavailableGradientFirst")?.cgColor, UIColor(named: "UnavailableGradientLast")?.cgColor]
+        setupGradient(with: gradientLayer)
+        
+    }
+    
+    func setGoogleStyle() {
+        setupStyle()
+        self.setTitleColor(UIColor(named: "DefaultGrey"), for: .normal)
+        self.layer.borderColor = UIColor(named: "DefaultGrey")?.cgColor
+        self.layer.borderWidth = 1
+    }
+    
+    func setupStyle() {
+        self.backgroundColor = .clear
+        self.layer.borderWidth = 0
+        self.layer.cornerRadius = 15
+        self.clipsToBounds = true
+    }
+    
+    func setupGradient(with gradientLayer: CAGradientLayer) {
         gradientLayer.locations = [0,1]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0)
         gradientLayer.frame = self.bounds
         layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
-    func setSecondaryStyle() {
-        self.setTitleColor(UIColor(named: "Default Blue"), for: .normal)
-        self.backgroundColor = .clear
-        self.layer.cornerRadius = 15
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor(named: "Default Blue")?.cgColor
-        self.clipsToBounds = true
-    }
-    
-    func setUnavailable() {
-        
     }
     
 }
