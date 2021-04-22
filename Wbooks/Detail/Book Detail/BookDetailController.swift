@@ -37,7 +37,11 @@ final class BookDetailController: UIViewController {
     // MARK: Actions
     func setupView() {
         bookDetailView.addToWishlistButton.setSecondaryStyle()
-        bookDetailView.rentButton.setMainStyle()
+        if viewModel.status == "Available" {
+            bookDetailView.rentButton.setMainStyle()
+        } else {
+            bookDetailView.rentButton.setUnavailableStyle()
+        }
     }
     
 }

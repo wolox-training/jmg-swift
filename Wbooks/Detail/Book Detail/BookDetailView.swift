@@ -44,9 +44,9 @@ class BookDetailView: NibView {
         availabilityLabel.text = viewModel.status
         
         if viewModel.status == "Available" {
-            availabilityLabel.textColor = UIColor(named: "Available Green")
+            availabilityLabel.textColor = UIColor(named: "AvailableGreen")
         } else {
-            availabilityLabel.textColor = .red
+            availabilityLabel.textColor = UIColor(named: "UnavailableRed")
         }
         
         addToWishlistButton.setTitle(viewModel.wishlistButtonText, for: .normal)
