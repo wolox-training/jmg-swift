@@ -20,6 +20,7 @@ final class BookDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
     }
 
     // MARK: Initializers
@@ -31,6 +32,12 @@ final class BookDetailController: UIViewController {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Actions
+    func setupView() {
+        bookDetailView.rentButton.setGradientStyle()
+        bookDetailView.addToWishlistButton.setBorderStyle()
     }
     
 }

@@ -72,6 +72,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="sBe-FI-f9V" secondAttribute="height" multiplier="285:46" id="oHy-PO-pFk"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Add to wishlist"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WB-bm-oOa">
@@ -79,6 +80,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="5WB-bm-oOa" secondAttribute="height" multiplier="31:5" id="23b-g0-qQh"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Rent"/>
                         </button>
                     </subviews>

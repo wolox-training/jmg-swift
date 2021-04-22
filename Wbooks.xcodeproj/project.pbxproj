@@ -11,6 +11,7 @@
 		52502D460CC570604C8A5908 /* Pods_Wbooks_WbooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F882ED81AD8D8B6D5BD2B7 /* Pods_Wbooks_WbooksUITests.framework */; };
 		A0222DE9262DD51A005C8BEE /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0222DE8262DD51A005C8BEE /* BookRepository.swift */; };
 		A0222DEF262DF2B4005C8BEE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0222DEE262DF2B4005C8BEE /* UIImageViewExtension.swift */; };
+		A0262FBF2632130300B6BFE7 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0262FBE2632130300B6BFE7 /* UIButtonExtension.swift */; };
 		A0417385261E2CC8004EAF62 /* LibraryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0417384261E2CC8004EAF62 /* LibraryView.xib */; };
 		A041738A261E2CF2004EAF62 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0417389261E2CF2004EAF62 /* LibraryView.swift */; };
 		A042B51C261F6EB40039CF73 /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042B51A261F6EB40039CF73 /* LibraryCell.swift */; };
@@ -72,6 +73,7 @@
 		8571F9EC64ECF8E76D463F8F /* Pods-Wbooks-WbooksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks-WbooksUITests.release.xcconfig"; path = "Target Support Files/Pods-Wbooks-WbooksUITests/Pods-Wbooks-WbooksUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A0222DE8262DD51A005C8BEE /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		A0222DEE262DF2B4005C8BEE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		A0262FBE2632130300B6BFE7 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		A0417384261E2CC8004EAF62 /* LibraryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryView.xib; sourceTree = "<group>"; };
 		A0417389261E2CF2004EAF62 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		A042B51A261F6EB40039CF73 /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				A0222DEE262DF2B4005C8BEE /* UIImageViewExtension.swift */,
 				A0BC333F2630893A0095FFCA /* UIViewControllerExtension.swift */,
+				A0262FBE2632130300B6BFE7 /* UIButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				A09AE8AE261F559700F8B1F9 /* LibraryController.swift in Sources */,
 				A08F9B9C26307BDD00B6CCEC /* BookDetailViewModel.swift in Sources */,
 				A0BC33402630893A0095FFCA /* UIViewControllerExtension.swift in Sources */,
+				A0262FBF2632130300B6BFE7 /* UIButtonExtension.swift in Sources */,
 				A08F9B88263060EF00B6CCEC /* DetailView.swift in Sources */,
 				A042B525261F7CA80039CF73 /* Book.swift in Sources */,
 				A072D939261CF42D002DBD0F /* NibView.swift in Sources */,

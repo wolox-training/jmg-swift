@@ -27,7 +27,6 @@ class BookDetailView: NibView {
     @IBOutlet weak var addToWishlistButton: UIButton!
     @IBOutlet weak var rentButton: UIButton!
     
-    
     // MARK: Actions
     override func awakeFromNib() {
         super.awakeFromNib()
