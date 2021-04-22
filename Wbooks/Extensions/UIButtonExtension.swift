@@ -9,7 +9,7 @@ import UIKit
 
 extension UIButton {
     
-    func setGradientStyle() {
+    func setMainStyle() {
         self.backgroundColor = .clear
         self.layer.borderWidth = 0
         self.setTitleColor(.white, for: .normal)
@@ -25,13 +25,17 @@ extension UIButton {
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func setBorderStyle() {
+    func setSecondaryStyle() {
         self.setTitleColor(UIColor(named: "Default Blue"), for: .normal)
         self.backgroundColor = .clear
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(named: "Default Blue")?.cgColor
         self.clipsToBounds = true
+    }
+    
+    func setUnavailable() {
+        
     }
     
 }

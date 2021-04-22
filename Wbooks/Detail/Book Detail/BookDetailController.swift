@@ -36,8 +36,8 @@ final class BookDetailController: UIViewController {
     
     // MARK: Actions
     func setupView() {
-        bookDetailView.rentButton.setGradientStyle()
-        bookDetailView.addToWishlistButton.setBorderStyle()
+        bookDetailView.rentButton.setMainStyle()
+        bookDetailView.addToWishlistButton.setSecondaryStyle()
     }
     
 }
