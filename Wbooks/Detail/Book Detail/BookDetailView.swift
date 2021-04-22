@@ -32,7 +32,6 @@ class BookDetailView: NibView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .clear
-        self.layer.cornerRadius = 10
     }
     
     // MARK: Public interface
