@@ -26,6 +26,7 @@
 "ALERT_BOX.TITLE" = "Error";
 "ALERT_BOX.ERROR_MESSAGE" = "Ha ocurrido un error.";
 "ALERT_BOX.BOOK_UNAVAILABLE_MESSAGE" = "Este libro no está disponible para alquilar actualmente.";
+"ALERT_BOX.BOOK_RENTED" = "Libro alquilado correctamente. ¡Que lo disfrutes!";
 "ALERT_BOX.BUTTON" = "Ok";
 
 /* DETAIL VIEW */

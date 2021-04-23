@@ -181,10 +181,10 @@
 		A042B522261F7C490039CF73 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				A09AE8AD261F559700F8B1F9 /* LibraryController.swift */,
 				A0417389261E2CF2004EAF62 /* LibraryView.swift */,
-				A06C2449262873E100BF0D18 /* LibraryViewModel.swift */,
 				A0417384261E2CC8004EAF62 /* LibraryView.xib */,
+				A09AE8AD261F559700F8B1F9 /* LibraryController.swift */,
+				A06C2449262873E100BF0D18 /* LibraryViewModel.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -235,11 +235,11 @@
 				A054A59E261B4AC40092926E /* SceneDelegate.swift */,
 				A05ABAA1261CC3B40080619A /* Enviroment.swift */,
 				A072D938261CF42D002DBD0F /* NibView.swift */,
+				A0222DE8262DD51A005C8BEE /* BookRepository.swift */,
 				A054A5A5261B4AC50092926E /* Assets.xcassets */,
+				A0A3161D2624F04600CC4870 /* Localization */,
 				A054A5A7261B4AC50092926E /* LaunchScreen.storyboard */,
 				A054A5AA261B4AC50092926E /* Info.plist */,
-				A0A3161D2624F04600CC4870 /* Localization */,
-				A0222DE8262DD51A005C8BEE /* BookRepository.swift */,
 			);
 			path = Wbooks;
 			sourceTree = "<group>";
@@ -296,8 +296,8 @@
 			children = (
 				A08F9B9626307BCF00B6CCEC /* BookDetailView.swift */,
 				A08F9BA026307BE800B6CCEC /* BookDetailView.xib */,
-				A08F9B9B26307BDD00B6CCEC /* BookDetailViewModel.swift */,
 				A08F9BA826307C7800B6CCEC /* BookDetailController.swift */,
+				A08F9B9B26307BDD00B6CCEC /* BookDetailViewModel.swift */,
 			);
 			path = "Book Detail";
 			sourceTree = "<group>";

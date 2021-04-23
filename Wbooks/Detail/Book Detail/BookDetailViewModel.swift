@@ -11,15 +11,21 @@ struct BookDetailViewModel {
 
     // MARK: Properties
     private let book: Book
+    private let repository: RentRepositoryType
     let wishlistButtonText = NSLocalizedString("DETAIL_VIEW.WISHLIST_BUTTON_TITLE", comment: "Title for the 'Add to wishlist' button in the book detail view")
     let rentButtonText = NSLocalizedString("DETAIL_VIEW.RENT_BUTTON_TITLE", comment: "Title for the 'Rent' button in the book detail view")
 
-    init(book: Book) {
+    // MARK: Inizialization
+    init(book: Book, repository: RentRepositoryType) {
         self.book = book
+        self.repository = repository
     }
 
     // MARK: Presentation
-
+    var id: Int {
+        book.id
+    }
+    
     var cover: String {
         book.image
     }
@@ -42,6 +48,15 @@ struct BookDetailViewModel {
 
     var status: String{
         book.status
+    }
+    
+    // MARK: API Requests
+    func rentBook(with params: [String: Any], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        repository.postRent(with: params) {
+            onSuccess()
+        } onError: { error in
+            onError(error)
+        }
     }
 
 }

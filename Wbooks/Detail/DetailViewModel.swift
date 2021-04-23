@@ -11,14 +11,16 @@ struct DetailViewModel {
     
     // MARK: Properties
     private let book: Book
+    private let repository: RentRepositoryType
     
     // MARK: Inizialization
-    init(book: Book) {
+    init(book: Book, repository: RentRepositoryType = BookRepository()) {
         self.book = book
+        self.repository = repository
     }
     
     // MARK: Public interface
     func createBookDetailsViewModel() -> BookDetailViewModel {
-        return BookDetailViewModel(book: book)
+        return BookDetailViewModel(book: book, repository: self.repository)
     }
 }

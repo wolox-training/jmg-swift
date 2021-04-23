@@ -26,6 +26,7 @@
 "ALERT_BOX.TITLE" = "Error";
 "ALERT_BOX.ERROR_MESSAGE" = "An error has occurred.";
 "ALERT_BOX.BOOK_UNAVAILABLE_MESSAGE" = "This book is currently not available for rent.";
+"ALERT_BOX.BOOK_RENTED" = "Book rented successfully. Enjoy!";
 "ALERT_BOX.BUTTON" = "Ok";
 
 /* DETAIL VIEW */
