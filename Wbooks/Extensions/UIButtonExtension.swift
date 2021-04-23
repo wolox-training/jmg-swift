@@ -45,7 +45,7 @@ extension UIButton {
     func setupStyle() {
         self.backgroundColor = .clear
         self.layer.borderWidth = 0
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 24
         self.clipsToBounds = true
     }
     
