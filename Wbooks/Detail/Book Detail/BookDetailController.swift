@@ -63,29 +63,26 @@ final class BookDetailController: UIViewController {
         if viewModel.status == "Available" {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-mm-dd"
-            
             let fromDate = Date()
             let toDate = Calendar.current.date(byAdding: .day, value: 1, to: fromDate)
             let params: [String : Any] = ["user_id" : "10",
                           "book_id" : viewModel.id,
                           "fromDate" : formatter.string(from: fromDate),
                           "toDate" : formatter.string(from: toDate!)]
+            
             viewModel.rentBook(with: params, onSuccess: {
                 self.displayAlert(message:
                                 self.rentSuccessMessage)
             }, onError: {_ in
                 self.displayAlert(message: self.errorMessage)
             })
-            print("Book rented")
         } else {
-            print("book unavailable for rental")
             displayAlert(message: self.rentErrorMessage)
         }
         
     }
     
     @objc func addToWishlistButtonTapped() {
-        print("Book added to the wishlist")
         bookDetailView.addToWishlistButton.setUnavailableStyle()
         bookDetailView.addToWishlistButton.isEnabled = false
     }

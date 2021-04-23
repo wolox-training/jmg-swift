@@ -20,7 +20,6 @@ class DetailViewController: UIViewController {
         let bookDetailsViewModel = viewModel.createBookDetailsViewModel()
         bookDetailsController = BookDetailController(viewModel: bookDetailsViewModel)
         super.init(nibName: .none, bundle: .none)
-        
     }
 
     required init?(coder: NSCoder) {
