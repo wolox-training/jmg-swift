@@ -11,7 +11,8 @@ class LibraryCell: UITableViewCell {
 
     // MARK: Properties
     static let identifier = "LibraryCell"
-    
+    private var request: DispatchWorkItem?
+
     @IBOutlet weak var cellView: UIView! {
         didSet {
             cellView.layer.cornerRadius = 10
@@ -20,7 +21,7 @@ class LibraryCell: UITableViewCell {
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
-    
+
     // MARK: Actions
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,11 +30,18 @@ class LibraryCell: UITableViewCell {
         self.selectedBackgroundView = UIView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        request?.cancel()
+        request = nil
+        coverImage.image = UIImage(named: "PlaceholderCover")
+    }
+
     // MARK: Public interface
     func setup(with viewModel: LibraryCellViewModel) {
-        coverImage.load(stringURL: viewModel.cover)
+        request = coverImage.load(stringURL: viewModel.cover)
         titleLabel.text = viewModel.title
         authorLabel.text = viewModel.author
     }
-    
+
 }

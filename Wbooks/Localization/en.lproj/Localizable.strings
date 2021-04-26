@@ -24,5 +24,15 @@
 
 /* ALERT BOX */
 "ALERT_BOX.TITLE" = "Error";
-"ALERT_BOX.MESSAGE" = "An error has occurred.";
+"ALERT_BOX.ERROR_MESSAGE" = "An error has occurred.";
+"ALERT_BOX.BOOK_UNAVAILABLE_MESSAGE" = "This book is currently not available for rent.";
+"ALERT_BOX.BOOK_RENTED" = "Book rented successfully. Enjoy!";
 "ALERT_BOX.BUTTON" = "Ok";
+
+/* DETAIL VIEW */
+"DETAIL_VIEW.TITLE" = "BOOK DETAIL";
+"DETAIL_VIEW.WISHLIST_BUTTON_TITLE" = "ADD TO WISHLIST";
+"DETAIL_VIEW.RENT_BUTTON_TITLE" = "RENT";
+"DETAIL_VIEW.BOOK_IS_AVAILABLE" = "Available";
+"DETAIL_VIEW.BOOK_IS_UNAVAILABLE" = "Not available";
+

@@ -5,7 +5,6 @@
 //  Created by Juan Martín Gordo on 06/04/2021.
 //
 
-import Foundation
 import UIKit
 
 final class MainViewController: UIViewController {
@@ -24,16 +23,16 @@ final class MainViewController: UIViewController {
         mainView.setup(with: mainViewModel)
         setupLoginButton()
     }
-    
+
     private func setupLoginButton() {
         mainView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
-    
+
     // MARK: Navigation methods
     @objc private func loginButtonTapped() {
         let controller = TabBarController()
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
-    
+
 }

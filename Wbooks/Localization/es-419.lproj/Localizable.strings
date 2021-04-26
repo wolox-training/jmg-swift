@@ -24,5 +24,14 @@
 
 /* ALERT BOX */
 "ALERT_BOX.TITLE" = "Error";
-"ALERT_BOX.MESSAGE" = "Ha ocurrido un error.";
+"ALERT_BOX.ERROR_MESSAGE" = "Ha ocurrido un error.";
+"ALERT_BOX.BOOK_UNAVAILABLE_MESSAGE" = "Este libro no está disponible para alquilar actualmente.";
+"ALERT_BOX.BOOK_RENTED" = "Libro alquilado correctamente. ¡Que lo disfrutes!";
 "ALERT_BOX.BUTTON" = "Ok";
+
+/* DETAIL VIEW */
+"DETAIL_VIEW.TITLE" = "DETALLES DEL LIBRO";
+"DETAIL_VIEW.WISHLIST_BUTTON_TITLE" = "AÑADIR A DESEADOS";
+"DETAIL_VIEW.RENT_BUTTON_TITLE" = "ALQUILAR";
+"DETAIL_VIEW.BOOK_IS_AVAILABLE" = "Disponible";
+"DETAIL_VIEW.BOOK_IS_UNAVAILABLE" = "No disponible";
