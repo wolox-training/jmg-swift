@@ -10,11 +10,7 @@ import UIKit
 class BookDetailView: NibView {
     
     // MARK: Properties
-    let availableGreen = UIColor(red: 165, green: 205, blue: 57, alpha: 1)
-    let wishlistButtonText = NSLocalizedString("DETAIL_VIEW.WISHLIST_BUTTON_TITLE", comment: "Title for the 'Add to wishlist' button in the book detail view")
-    let rentButtonText = NSLocalizedString("DETAIL_VIEW.RENT_BUTTON_TITLE", comment: "Title for the 'Rent' button in the book detail view")
-    
-    @IBOutlet weak var bookDetailsViewContainer: UIView! {
+   @IBOutlet weak var bookDetailsViewContainer: UIView! {
         didSet {
             bookDetailsViewContainer.layer.cornerRadius = 10
         }
@@ -38,6 +34,9 @@ class BookDetailView: NibView {
     
     // MARK: Public interface
     func setup (with viewModel: BookDetailViewModel) {
+        let wishlistButtonText = NSLocalizedString("DETAIL_VIEW.WISHLIST_BUTTON_TITLE", comment: "Title for the 'Add to wishlist' button in the book detail view")
+        let rentButtonText = NSLocalizedString("DETAIL_VIEW.RENT_BUTTON_TITLE", comment: "Title for the 'Rent' button in the book detail view")
+        
         coverImage.load(stringURL: viewModel.cover)
         titleLabel.text = viewModel.title
         authorLabel.text = viewModel.author
@@ -46,17 +45,17 @@ class BookDetailView: NibView {
         
         displayAvailability(with: viewModel)
         
-        addToWishlistButton.setTitle(self.wishlistButtonText, for: .normal)
-        rentButton.setTitle(self.rentButtonText, for: .normal)
+        addToWishlistButton.setTitle(wishlistButtonText, for: .normal)
+        rentButton.setTitle(rentButtonText, for: .normal)
     }
     
     private func displayAvailability(with viewModel: BookDetailViewModel) {
-        if viewModel.status == "Available" {
+        if viewModel.isAvailable() {
             availabilityLabel.text = NSLocalizedString("DETAIL_VIEW.BOOK_IS_AVAILABLE", comment: "Label text when a book is available for rent")
-            availabilityLabel.textColor = UIColor(named: "AvailableGreen")
+            availabilityLabel.textColor = UIColor.availableGreen
         } else {
             availabilityLabel.text = NSLocalizedString("DETAIL_VIEW.BOOK_IS_UNAVAILABLE", comment: "Label text when a book is not available for rent")
-            availabilityLabel.textColor = UIColor(named: "UnavailableRed")
+            availabilityLabel.textColor = UIColor.unavailableRed
         }
     }
     

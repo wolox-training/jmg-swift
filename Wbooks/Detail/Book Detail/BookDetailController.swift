@@ -12,11 +12,6 @@ final class BookDetailController: UIViewController {
     // MARK: Properties
     private lazy var bookDetailView: BookDetailView = BookDetailView()
     let viewModel: BookDetailViewModel
-    let errorTitle = NSLocalizedString("ALERT_BOX.TITLE", comment: "Title for the error alert box")
-    let rentErrorMessage = NSLocalizedString("ALERT_BOX.ERROR_MESSAGE", comment: "Message detailing an error in the alert box")
-    let errorMessage = NSLocalizedString("ALERT_BOX.BOOK_UNAVAILABLE_MESSAGE", comment: "Message detailing an error in the alert box")
-    let rentSuccessMessage = NSLocalizedString("ALERT_BOX.BOOK_RENTED", comment: "Message detailing an error in the alert box")
-    let errorDismiss = NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box")
 
     // MARK: Lifecycle methods
     override func loadView() {
@@ -32,7 +27,7 @@ final class BookDetailController: UIViewController {
     
     func setupView() {
         bookDetailView.addToWishlistButton.setSecondaryStyle()
-        if viewModel.status == "Available" {
+        if viewModel.isAvailable() {
             bookDetailView.rentButton.setMainStyle()
         } else {
             bookDetailView.rentButton.setUnavailableStyle()
@@ -60,7 +55,7 @@ final class BookDetailController: UIViewController {
     
     // MARK: Actions
     @objc func rentButtonTapped() {
-        if viewModel.status == "Available" {
+        if viewModel.isAvailable() {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             let fromDate = Date()
@@ -71,14 +66,14 @@ final class BookDetailController: UIViewController {
                           "to" : formatter.string(from: toDate!)]
             
             viewModel.rentBook(with: params, onSuccess: {
-                let alertController = UIAlertController(title: nil, message: self.rentSuccessMessage, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: self.errorDismiss, style: .default, handler: nil))
-                self.present(alertController, animated: true)
-            }, onError: {_ in
-                self.displayAlert(message: self.rentErrorMessage)
+                self.displaySuccessAlert()
+            }, onError: { _ in
+                let errorMessage = NSLocalizedString("ALERT_BOX.ERROR_MESSAGE", comment: "Message detailing an error in the alert box")
+                self.displayErrorAlert(message: errorMessage)
             })
         } else {
-            displayAlert(message: self.errorMessage)
+            let errorMessage = NSLocalizedString("ALERT_BOX.BOOK_UNAVAILABLE_MESSAGE", comment: "Message detailing an error in the alert box")
+            displayErrorAlert(message: errorMessage)
         }
         
     }
@@ -88,9 +83,21 @@ final class BookDetailController: UIViewController {
         bookDetailView.addToWishlistButton.isEnabled = false
     }
     
-    func displayAlert(message: String) {
-        let alertController = UIAlertController(title: self.errorTitle, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: self.errorDismiss, style: .default, handler: nil))
+    private func displayErrorAlert(message: String) {
+        let errorTitle = NSLocalizedString("ALERT_BOX.TITLE", comment: "Title for the error alert box")
+        let errorDismiss = NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box")
+        
+        let alertController = UIAlertController(title: errorTitle, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: errorDismiss, style: .default, handler: nil))
+        self.present(alertController, animated: true)
+    }
+    
+    private func displaySuccessAlert() {
+        let rentSuccessMessage = NSLocalizedString("ALERT_BOX.BOOK_RENTED", comment: "Message detailing an error in the alert box")
+        let errorDismiss = NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box")
+
+        let alertController = UIAlertController(title: nil, message: rentSuccessMessage, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: errorDismiss, style: .default, handler: nil))
         self.present(alertController, animated: true)
     }
     

@@ -37,15 +37,10 @@ struct BookRepository: BookRepositoryType, RentRepositoryType {
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             do {
                 switch response.result {
-                case .success(let value):
-                    guard let _ = try JSONSerialization.jsonObject(with: response.data!) as? [String: Any], let JSONData = try? JSONSerialization.data(withJSONObject: value, options: .prettyPrinted), let _ = String(data: JSONData, encoding: .utf8) else {
-                                print("Error: could not convert JSON data to String")
-                                return
-                    }
+                case .success(_):
                     onSuccess()
                 case .failure(let error):
                     onError(error)
-                    print("Error aca")
                 }
             } catch {
                 onError(error)

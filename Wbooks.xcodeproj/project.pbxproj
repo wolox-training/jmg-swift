@@ -44,6 +44,7 @@
 		A09AE8AE261F559700F8B1F9 /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AE8AD261F559700F8B1F9 /* LibraryController.swift */; };
 		A0A316232624F64600CC4870 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A316252624F64600CC4870 /* Localizable.strings */; };
 		A0BC33402630893A0095FFCA /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BC333F2630893A0095FFCA /* UIViewControllerExtension.swift */; };
+		A0C709B22637228700395DB3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C709B12637228700395DB3 /* UIColorExtension.swift */; };
 		B06BEAE84E3DA9FFE055DF01 /* Pods_WbooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6822E8920181DCD5FEF2755C /* Pods_WbooksTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +115,7 @@
 		A0A316292624F68200CC4870 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A0A3162A2624F68200CC4870 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A0BC333F2630893A0095FFCA /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		A0C709B12637228700395DB3 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		BAECCA2CB363664C7CFD6CC0 /* Pods-Wbooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wbooks.debug.xcconfig"; path = "Target Support Files/Pods-Wbooks/Pods-Wbooks.debug.xcconfig"; sourceTree = "<group>"; };
 		D3F7571156349EF7DA93FB8D /* Pods_Wbooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wbooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8EB7323FF6250F83E4EBABF /* Pods-WbooksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WbooksTests.debug.xcconfig"; path = "Target Support Files/Pods-WbooksTests/Pods-WbooksTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				A0222DEE262DF2B4005C8BEE /* UIImageViewExtension.swift */,
 				A0BC333F2630893A0095FFCA /* UIViewControllerExtension.swift */,
 				A0262FBE2632130300B6BFE7 /* UIButtonExtension.swift */,
+				A0C709B12637228700395DB3 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				A08F9BA926307C7800B6CCEC /* BookDetailController.swift in Sources */,
 				A06C24562628771300BF0D18 /* LibraryCellViewModel.swift in Sources */,
 				A09AE8AE261F559700F8B1F9 /* LibraryController.swift in Sources */,
+				A0C709B22637228700395DB3 /* UIColorExtension.swift in Sources */,
 				A08F9B9C26307BDD00B6CCEC /* BookDetailViewModel.swift in Sources */,
 				A0BC33402630893A0095FFCA /* UIViewControllerExtension.swift in Sources */,
 				A0262FBF2632130300B6BFE7 /* UIButtonExtension.swift in Sources */,

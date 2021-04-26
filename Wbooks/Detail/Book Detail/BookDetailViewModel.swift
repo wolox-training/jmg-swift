@@ -48,6 +48,11 @@ struct BookDetailViewModel {
         book.status
     }
     
+    // MARK: Actions
+    func isAvailable() -> Bool {
+        return book.status == "Available"
+    }
+    
     // MARK: API Requests
     func rentBook(with params: [String: Any], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         repository.postRent(with: params) {
