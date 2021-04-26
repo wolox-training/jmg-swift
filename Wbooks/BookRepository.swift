@@ -7,12 +7,14 @@
 
 import Alamofire
 
-struct BookRepository: BookRepositoryType, RentRepositoryType {
+struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepositoryType {
     
     // MARK: Properties
     private static let baseUrl = "https://ios-training-backend.herokuapp.com/api/v1"
     private static let books = "/books"
     private static let rents = "/rents"
+    private static let comments = "/comments"
+    
 
     // MARK: Actions
     func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void) {
@@ -55,13 +57,32 @@ struct BookRepository: BookRepositoryType, RentRepositoryType {
                 onError(error)
                 return
             }
-            
-            
-            
         }
+    }
+    
+    func fetchComments(bookID: Int, onSuccess: @escaping ([Comment]) -> Void, onError: @escaping (Error) -> Void) {
+        let url = URL(string: BookRepository.baseUrl + BookRepository.books + "/" + String(bookID) + BookRepository.comments)!
+        AF.request(url, method: .get).responseJSON(completionHandler: { response in
+            switch response.result {
+            case .success(let value):
+                guard let JSONcomments = try? JSONSerialization.data(withJSONObject: value, options: []),
+                      let comments = try? JSONDecoder().decode([Comment].self, from: JSONcomments) else {
+                    onError(CommentError.decodeError) // Error here
+                    print(onError(CommentError.decodeError))
+                    return
+                }
+                onSuccess(comments)
+            case .failure(let error):
+                onError(error)
+            }
+    })
     }
 
     enum BookError: Error {
+        case decodeError
+    }
+    
+    enum CommentError: Error {
         case decodeError
     }
 
@@ -73,4 +94,8 @@ protocol BookRepositoryType {
 
 protocol RentRepositoryType {
     func postRent(book: Book, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+}
+
+protocol CommentRepositoryType {
+    func fetchComments(bookID: Int, onSuccess: @escaping ([Comment]) -> Void, onError: @escaping (Error) -> Void)
 }

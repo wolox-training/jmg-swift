@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailView" customModule="Wbooks" customModuleProvider="target">
             <connections>
-                <outlet property="bookDetailContainer" destination="4BP-kz-Abg" id="1Fk-dj-Z6A"/>
+                <outlet property="bookDetailContainer" destination="4BP-kz-Abg" id="vck-P3-ch6"/>
+                <outlet property="commentsTable" destination="KFn-sC-qIs" id="eFY-wD-wbP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,6 +31,11 @@
                         <constraint firstAttribute="height" constant="339" id="krg-wJ-ziS"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KFn-sC-qIs">
+                    <rect key="frame" x="20" y="455" width="374" height="261"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.91764705879999997" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
