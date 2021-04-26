@@ -56,16 +56,7 @@ final class BookDetailController: UIViewController {
     // MARK: Actions
     @objc func rentButtonTapped() {
         if viewModel.isAvailable() {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-            let fromDate = Date()
-            let toDate = Calendar.current.date(byAdding: .day, value: 1, to: fromDate)
-            let params: [String : Any] = ["user_id" : "10",
-                          "book_id" : viewModel.id,
-                          "from" : formatter.string(from: fromDate),
-                          "to" : formatter.string(from: toDate!)]
-            
-            viewModel.rentBook(with: params, onSuccess: {
+            viewModel.rentBook(onSuccess: {
                 self.displaySuccessAlert()
             }, onError: { _ in
                 let errorMessage = NSLocalizedString("ALERT_BOX.ERROR_MESSAGE", comment: "Message detailing an error in the alert box")

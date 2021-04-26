@@ -54,8 +54,8 @@ struct BookDetailViewModel {
     }
     
     // MARK: API Requests
-    func rentBook(with params: [String: Any], onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        repository.postRent(with: params) {
+    func rentBook(onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        repository.postRent(book: book) {
             onSuccess()
         } onError: { error in
             onError(error)

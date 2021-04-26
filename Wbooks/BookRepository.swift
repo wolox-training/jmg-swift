@@ -32,8 +32,17 @@ struct BookRepository: BookRepositoryType, RentRepositoryType {
         }
     }
     
-    func postRent(with params: Parameters, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+    func postRent(book: Book, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
         let url = URL(string: BookRepository.baseUrl + BookRepository.rents)!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let fromDate = Date()
+        let toDate = Calendar.current.date(byAdding: .day, value: 1, to: fromDate)
+        let params: [String : Any] = ["user_id" : "10",
+                                      "book_id" : book.id,
+                                      "from" : formatter.string(from: fromDate),
+                                      "to" : formatter.string(from: toDate!)]
+        
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             do {
                 switch response.result {
@@ -63,5 +72,5 @@ protocol BookRepositoryType {
 }
 
 protocol RentRepositoryType {
-    func postRent(with params: Parameters, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+    func postRent(book: Book, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 }
