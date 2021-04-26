@@ -11,6 +11,8 @@ class BookDetailView: NibView {
     
     // MARK: Properties
     let availableGreen = UIColor(red: 165, green: 205, blue: 57, alpha: 1)
+    let wishlistButtonText = NSLocalizedString("DETAIL_VIEW.WISHLIST_BUTTON_TITLE", comment: "Title for the 'Add to wishlist' button in the book detail view")
+    let rentButtonText = NSLocalizedString("DETAIL_VIEW.RENT_BUTTON_TITLE", comment: "Title for the 'Rent' button in the book detail view")
     
     @IBOutlet weak var bookDetailsViewContainer: UIView! {
         didSet {
@@ -44,8 +46,8 @@ class BookDetailView: NibView {
         
         displayAvailability(with: viewModel)
         
-        addToWishlistButton.setTitle(viewModel.wishlistButtonText, for: .normal)
-        rentButton.setTitle(viewModel.rentButtonText, for: .normal)
+        addToWishlistButton.setTitle(self.wishlistButtonText, for: .normal)
+        rentButton.setTitle(self.rentButtonText, for: .normal)
     }
     
     private func displayAvailability(with viewModel: BookDetailViewModel) {

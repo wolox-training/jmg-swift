@@ -62,22 +62,23 @@ final class BookDetailController: UIViewController {
     @objc func rentButtonTapped() {
         if viewModel.status == "Available" {
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-mm-dd"
+            formatter.dateFormat = "yyyy-MM-dd"
             let fromDate = Date()
             let toDate = Calendar.current.date(byAdding: .day, value: 1, to: fromDate)
             let params: [String : Any] = ["user_id" : "10",
                           "book_id" : viewModel.id,
-                          "fromDate" : formatter.string(from: fromDate),
-                          "toDate" : formatter.string(from: toDate!)]
+                          "from" : formatter.string(from: fromDate),
+                          "to" : formatter.string(from: toDate!)]
             
             viewModel.rentBook(with: params, onSuccess: {
-                self.displayAlert(message:
-                                self.rentSuccessMessage)
+                let alertController = UIAlertController(title: nil, message: self.rentSuccessMessage, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: self.errorDismiss, style: .default, handler: nil))
+                self.present(alertController, animated: true)
             }, onError: {_ in
-                self.displayAlert(message: self.errorMessage)
+                self.displayAlert(message: self.rentErrorMessage)
             })
         } else {
-            displayAlert(message: self.rentErrorMessage)
+            displayAlert(message: self.errorMessage)
         }
         
     }

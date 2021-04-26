@@ -8,9 +8,15 @@
 import Alamofire
 
 struct BookRepository: BookRepositoryType, RentRepositoryType {
+    
+    // MARK: Properties
+    private static let baseUrl = "https://ios-training-backend.herokuapp.com/api/v1"
+    private static let books = "/books"
+    private static let rents = "/rents"
 
+    // MARK: Actions
     func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void) {
-        let url = URL(string: "https://ios-training-backend.herokuapp.com/api/v1/books")!
+        let url = URL(string: BookRepository.baseUrl + BookRepository.books)!
         AF.request(url, method: .get).responseJSON { response in
                 switch response.result {
                 case .success(let value):
@@ -27,7 +33,7 @@ struct BookRepository: BookRepositoryType, RentRepositoryType {
     }
     
     func postRent(with params: Parameters, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        let url = URL(string: "https://ios-training-backend.herokuapp.com/api/v1/rents")!
+        let url = URL(string: BookRepository.baseUrl + BookRepository.rents)!
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             do {
                 switch response.result {
@@ -39,9 +45,10 @@ struct BookRepository: BookRepositoryType, RentRepositoryType {
                     onSuccess()
                 case .failure(let error):
                     onError(error)
+                    print("Error aca")
                 }
             } catch {
-                print("There as an error converting the JSON data")
+                onError(error)
                 return
             }
             
