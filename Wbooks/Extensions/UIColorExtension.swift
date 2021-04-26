@@ -25,20 +25,20 @@ extension UIColor {
         return UIColor(named:"DefaultGrey")!
     }
     
-    static var mainGradientFirst: CGColor {
-        return UIColor(named: "MainGradientFirst")!.cgColor
+    static var mainGradientFirst: UIColor {
+        return UIColor(named: "MainGradientFirst")!
     }
     
-    static var mainGradientLast: CGColor {
-        return UIColor(named: "MainGradientLast")!.cgColor
+    static var mainGradientLast: UIColor {
+        return UIColor(named: "MainGradientLast")!
     }
     
-    static var unavailableGradientFirst: CGColor {
-        return UIColor(named: "UnavailableGradientFirst")!.cgColor
+    static var unavailableGradientFirst: UIColor {
+        return UIColor(named: "UnavailableGradientFirst")!
     }
     
-    static var unavailableGradientLast: CGColor {
-        return UIColor(named: "UnavailableGradientLast")!.cgColor
+    static var unavailableGradientLast: UIColor {
+        return UIColor(named: "UnavailableGradientLast")!
     }
     
 }

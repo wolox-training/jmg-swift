@@ -14,7 +14,7 @@ extension UIButton {
         self.setTitleColor(.white, for: .normal)
         
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.mainGradientFirst, UIColor.mainGradientLast]
+        gradientLayer.colors = [UIColor.mainGradientFirst.cgColor, UIColor.mainGradientLast.cgColor]
         setupGradient(with: gradientLayer)
     }
     
@@ -30,7 +30,7 @@ extension UIButton {
         self.setTitleColor(.white, for: .normal)
         
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.unavailableGradientFirst, UIColor.unavailableGradientLast]
+        gradientLayer.colors = [UIColor.unavailableGradientFirst.cgColor, UIColor.unavailableGradientLast.cgColor]
         setupGradient(with: gradientLayer)
         
     }
