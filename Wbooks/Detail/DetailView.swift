@@ -8,5 +8,9 @@
 import UIKit
 
 final class DetailView: NibView {
+    
+    // MARK: Properties
     @IBOutlet weak var bookDetailContainer: UIView!
+    @IBOutlet weak var commentsTable: UITableView!
+    
 }
