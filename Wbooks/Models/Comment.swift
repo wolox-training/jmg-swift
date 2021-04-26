@@ -10,7 +10,7 @@ import UIKit
 struct Comment: Codable {
     
     // MARK: Properties
-    let id: Int
-    let image, user, content: String
+    let id, book_id, user_id: Int
+    let content: String
     
 }

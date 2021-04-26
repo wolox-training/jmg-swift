@@ -39,7 +39,7 @@ class DetailViewModel {
     
     // MARK: API Requests
     func getComments(onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
-        commentRepository.fetchComments(bookID: book.id, onSuccess: { [weak self] (comments) in
+        commentRepository.fetchComments(bookID: book.id, onSuccess: { [weak self] (comments) -> Void in
             self?.commentsArray = comments
             onSuccess()
         }, onError: { _ in

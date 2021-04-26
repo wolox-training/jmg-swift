@@ -36,8 +36,8 @@ class CommentCell: UITableViewCell {
     
     // MARK: Public interface
     func setup(with viewModel: CommentCellViewModel) {
-        request = userImage.load(stringURL: viewModel.image)
-        nameLabel.text = viewModel.user
+       // request = userImage.load(stringURL: viewModel.image)
+        // nameLabel.text = viewModel.user
         commentLabel.text = viewModel.text
     }
     

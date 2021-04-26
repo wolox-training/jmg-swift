@@ -62,20 +62,19 @@ struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepository
     
     func fetchComments(bookID: Int, onSuccess: @escaping ([Comment]) -> Void, onError: @escaping (Error) -> Void) {
         let url = URL(string: BookRepository.baseUrl + BookRepository.books + "/" + String(bookID) + BookRepository.comments)!
-        AF.request(url, method: .get).responseJSON(completionHandler: { response in
+        AF.request(url, method: .get).responseJSON { response in
             switch response.result {
             case .success(let value):
                 guard let JSONcomments = try? JSONSerialization.data(withJSONObject: value, options: []),
                       let comments = try? JSONDecoder().decode([Comment].self, from: JSONcomments) else {
-                    onError(CommentError.decodeError) // Error here
-                    print(onError(CommentError.decodeError))
+                    onError(CommentError.decodeError)
                     return
                 }
                 onSuccess(comments)
             case .failure(let error):
                 onError(error)
             }
-    })
+        }
     }
 
     enum BookError: Error {

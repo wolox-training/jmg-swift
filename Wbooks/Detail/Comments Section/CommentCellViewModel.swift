@@ -17,13 +17,13 @@ struct CommentCellViewModel {
     }
     
     // MARK: Presentation
-    var image: String {
+    /* var image: String {
         return comment.image
     }
     
     var user: String {
         return comment.user
-    }
+    }*/ 
     
     var text: String {
         return comment.content

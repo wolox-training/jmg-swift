@@ -53,9 +53,9 @@ final class DetailViewController: UIViewController, UITableViewDelegate, UITable
     func loadComments() {
         viewModel.getComments(onSuccess: {[weak self] in
             self?.detailView.commentsTable.reloadData()
-        }, onError: {[weak self] in
+        }, onError: { 
             let errorMessage = NSLocalizedString("ALERT_BOX.ERROR_MESSAGE", comment: "Message detailing an error in the alert box")
-            self!.displayErrorAlert(message: errorMessage)
+            self.displayErrorAlert(message: errorMessage)
         })
     }
     
