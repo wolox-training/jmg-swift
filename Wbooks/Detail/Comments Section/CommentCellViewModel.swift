@@ -7,18 +7,40 @@
 
 import UIKit
 
-struct CommentCellViewModel {
+class CommentCellViewModel {
     
     // MARK: Properties
     private let comment: Comment
+    private var user: User?
+    let userRepository: UserRepositoryType
     
-    init(comment: Comment) {
+    init(comment: Comment, userRepository: UserRepositoryType = BookRepository()) {
         self.comment = comment
+        self.userRepository = userRepository
     }
     
     // MARK: Presentation
     var text: String {
         return comment.content
+    }
+    
+    var image: String {
+        return user?.image ?? ""
+    }
+    
+    var name: String {
+        return user?.username ?? ""
+    }
+    
+    // MARK: API Requests
+    func getUser(onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+        userRepository.fetchUser(userID: user!.id, onSuccess: { [weak self] (user) -> Void in
+            self?.user = user
+            onSuccess()
+        }, onError: { _ in
+            onError()
+        })
+    
     }
     
 }

@@ -15,7 +15,12 @@ class CommentCell: UITableViewCell {
     
     @IBOutlet weak var cellView: UIView!
     
-    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userImage: UIImageView! {
+        didSet {
+            userImage.layer.cornerRadius = userImage.frame.height/2
+            userImage.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
@@ -31,13 +36,13 @@ class CommentCell: UITableViewCell {
         super.prepareForReuse()
         request?.cancel()
         request = nil
-        userImage.image = UIImage(named: "User2")
+        userImage.image = UIImage(named: "User1")
     }
     
     // MARK: Public interface
     func setup(with viewModel: CommentCellViewModel) {
-       // request = userImage.load(stringURL: viewModel.image)
-        // nameLabel.text = viewModel.user
+        request = userImage.load(stringURL: viewModel.image)
+        nameLabel.text = viewModel.name
         commentLabel.text = viewModel.text
     }
     

@@ -41,6 +41,7 @@
 		A08F9B9C26307BDD00B6CCEC /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08F9B9B26307BDD00B6CCEC /* BookDetailViewModel.swift */; };
 		A08F9BA126307BE800B6CCEC /* BookDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A08F9BA026307BE800B6CCEC /* BookDetailView.xib */; };
 		A08F9BA926307C7800B6CCEC /* BookDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08F9BA826307C7800B6CCEC /* BookDetailController.swift */; };
+		A0951A1326385BE7005ED73D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0951A1226385BE7005ED73D /* User.swift */; };
 		A09AE8AE261F559700F8B1F9 /* LibraryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09AE8AD261F559700F8B1F9 /* LibraryController.swift */; };
 		A0A316232624F64600CC4870 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0A316252624F64600CC4870 /* Localizable.strings */; };
 		A0BC33402630893A0095FFCA /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BC333F2630893A0095FFCA /* UIViewControllerExtension.swift */; };
@@ -114,6 +115,7 @@
 		A08F9B9B26307BDD00B6CCEC /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
 		A08F9BA026307BE800B6CCEC /* BookDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailView.xib; sourceTree = "<group>"; };
 		A08F9BA826307C7800B6CCEC /* BookDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailController.swift; sourceTree = "<group>"; };
+		A0951A1226385BE7005ED73D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A09AE8AD261F559700F8B1F9 /* LibraryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryController.swift; sourceTree = "<group>"; };
 		A0A316242624F64600CC4870 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0A316292624F68200CC4870 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				A042B524261F7CA80039CF73 /* Book.swift */,
 				A0C70A0D2637479B00395DB3 /* Comment.swift */,
+				A0951A1226385BE7005ED73D /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				A054A59D261B4AC40092926E /* AppDelegate.swift in Sources */,
 				A05ABAA2261CC3B40080619A /* Enviroment.swift in Sources */,
 				A06C2463262881AC00BF0D18 /* MainViewModel.swift in Sources */,
+				A0951A1326385BE7005ED73D /* User.swift in Sources */,
 				A06C244A262873E100BF0D18 /* LibraryViewModel.swift in Sources */,
 				A042B51C261F6EB40039CF73 /* LibraryCell.swift in Sources */,
 				A08F9B82263060E100B6CCEC /* DetailViewController.swift in Sources */,

@@ -32,6 +32,7 @@ final class DetailViewController: UIViewController, UITableViewDelegate, UITable
         setupView()
         load(childViewController: bookDetailsController, into: detailView.bookDetailContainer)
         loadComments()
+        
     }
 
     override func loadView() {
