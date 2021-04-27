@@ -92,11 +92,13 @@
                         <constraint firstItem="sBe-FI-f9V" firstAttribute="top" secondItem="F6e-fG-8sE" secondAttribute="bottom" constant="8" id="50b-nv-eGx"/>
                         <constraint firstItem="5WB-bm-oOa" firstAttribute="centerX" secondItem="1Oj-zy-qPH" secondAttribute="centerX" id="518-kN-gm0"/>
                         <constraint firstItem="YRA-2k-xyv" firstAttribute="top" secondItem="1Oj-zy-qPH" secondAttribute="top" constant="8" id="C6H-IB-fg8"/>
+                        <constraint firstAttribute="height" constant="307" id="FKe-m4-ay1"/>
                         <constraint firstItem="j5y-fU-pQN" firstAttribute="top" secondItem="YRA-2k-xyv" secondAttribute="bottom" constant="8" symbolic="YES" id="Fok-wj-6TT"/>
                         <constraint firstItem="xQC-ww-c0f" firstAttribute="top" secondItem="Ky6-tR-DVo" secondAttribute="bottom" id="HjX-xw-347"/>
                         <constraint firstItem="j5y-fU-pQN" firstAttribute="leading" secondItem="F6e-fG-8sE" secondAttribute="trailing" id="Lrc-Wb-zgs"/>
                         <constraint firstItem="4BN-Gg-jjT" firstAttribute="leading" secondItem="F6e-fG-8sE" secondAttribute="trailing" id="M9K-O6-wuj"/>
                         <constraint firstItem="4BN-Gg-jjT" firstAttribute="top" secondItem="j5y-fU-pQN" secondAttribute="bottom" id="MTQ-oC-qwY"/>
+                        <constraint firstAttribute="width" constant="500" id="UiY-16-JX6"/>
                         <constraint firstItem="Ky6-tR-DVo" firstAttribute="top" secondItem="4BN-Gg-jjT" secondAttribute="bottom" id="Zel-Pb-SZy"/>
                         <constraint firstItem="sBe-FI-f9V" firstAttribute="centerX" secondItem="1Oj-zy-qPH" secondAttribute="centerX" id="bJj-I9-Y8X"/>
                         <constraint firstItem="5WB-bm-oOa" firstAttribute="top" secondItem="sBe-FI-f9V" secondAttribute="bottom" constant="7" id="etU-UK-HEg"/>

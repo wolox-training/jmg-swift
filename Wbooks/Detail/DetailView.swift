@@ -10,10 +10,14 @@ import UIKit
 final class DetailView: NibView {
     
     // MARK: Properties
-    @IBOutlet weak var bookDetailContainer: UIView!
-    @IBOutlet weak var commentsTable: UITableView! {
+    @IBOutlet weak var bookDetailContainer: UIView! {
         didSet {
             bookDetailContainer.layer.cornerRadius = 10
+        }
+    }
+    @IBOutlet weak var commentsTable: UITableView! {
+        didSet {
+            commentsTable.layer.cornerRadius = 10
         }
     }
     

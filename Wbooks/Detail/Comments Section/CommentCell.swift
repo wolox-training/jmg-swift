@@ -14,7 +14,6 @@ class CommentCell: UITableViewCell {
     private var request: DispatchWorkItem?
     
     @IBOutlet weak var cellView: UIView!
-    
     @IBOutlet weak var userImage: UIImageView! {
         didSet {
             userImage.layer.cornerRadius = userImage.frame.height/2
@@ -28,8 +27,8 @@ class CommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .clear
-        // self.backgroundView = UIView()
-        // self.selectedBackgroundView = UIView()
+        self.backgroundView = UIView()
+        self.selectedBackgroundView = UIView()
     }
     
     override func prepareForReuse() {
@@ -41,9 +40,18 @@ class CommentCell: UITableViewCell {
     
     // MARK: Public interface
     func setup(with viewModel: CommentCellViewModel) {
-        request = userImage.load(stringURL: viewModel.image)
-        nameLabel.text = viewModel.name
         commentLabel.text = viewModel.text
+        loadUser(viewModel: viewModel)
+    }
+    
+    // MARK: Actions
+    private func loadUser(viewModel: CommentCellViewModel) {
+        viewModel.getUser(onSuccess: { [weak self] in 
+            self?.request = self?.userImage.load(stringURL: viewModel.image)
+            self?.nameLabel.text = viewModel.name
+        }, onError: {
+            return
+        })
     }
     
 }
