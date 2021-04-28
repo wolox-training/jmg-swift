@@ -10,7 +10,6 @@ import UIKit
 extension UIImageView {
     func load(stringURL: String) -> DispatchWorkItem? {
         guard let url = URL(string: stringURL) else {
-            print("No URL Here")
             return nil
         }
         var workItem: DispatchWorkItem?

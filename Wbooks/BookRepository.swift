@@ -7,12 +7,32 @@
 
 import Alamofire
 
-struct BookRepository: BookRepositoryType, RentRepositoryType {
+// MARK: Protocols
+protocol BookRepositoryType {
+    func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void)
+}
+
+protocol RentRepositoryType {
+    func postRent(book: Book, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+}
+
+protocol CommentRepositoryType {
+    func fetchComments(bookID: Int, onSuccess: @escaping ([Comment]) -> Void, onError: @escaping (Error) -> Void)
+}
+
+protocol UserRepositoryType {
+    func fetchUser(userID: Int, onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void)
+}
+
+struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepositoryType, UserRepositoryType {
     
     // MARK: Properties
     private static let baseUrl = "https://ios-training-backend.herokuapp.com/api/v1"
     private static let books = "/books"
     private static let rents = "/rents"
+    private static let comments = "/comments"
+    private static let users = "/users"
+    
 
     // MARK: Actions
     func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void) {
@@ -22,7 +42,7 @@ struct BookRepository: BookRepositoryType, RentRepositoryType {
                 case .success(let value):
                     guard let JSONbooks = try? JSONSerialization.data(withJSONObject: value, options: []),
                           let books = try? JSONDecoder().decode([Book].self, from: JSONbooks) else {
-                        onError(BookError.decodeError)
+                        onError(RepositoryError.decodeError)
                         return
                     }
                     onSuccess(books)
@@ -55,22 +75,47 @@ struct BookRepository: BookRepositoryType, RentRepositoryType {
                 onError(error)
                 return
             }
-            
-            
-            
+        }
+    }
+    
+    func fetchComments(bookID: Int, onSuccess: @escaping ([Comment]) -> Void, onError: @escaping (Error) -> Void) {
+        let url = URL(string: BookRepository.baseUrl + BookRepository.books + "/\(bookID)" + BookRepository.comments)!
+        AF.request(url, method: .get).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                guard let JSONcomments = try? JSONSerialization.data(withJSONObject: value, options: []),
+                      let comments = try? JSONDecoder().decode([Comment].self, from: JSONcomments) else {
+                    onError(RepositoryError.decodeError)
+                    return
+                }
+                onSuccess(comments)
+            case .failure(let error):
+                onError(error)
+            }
+        }
+    }
+    
+    func fetchUser(userID: Int, onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void) {
+        let url = URL(string: BookRepository.baseUrl + BookRepository.users + "/\(userID)")!
+        AF.request(url, method: .get).responseJSON { response in
+            switch response.result {
+            case.success(let value):
+                guard let JSONuser = try? JSONSerialization.data(withJSONObject: value, options: []), let user = try? JSONDecoder().decode(User.self, from: JSONuser) else {
+                    onError(RepositoryError.decodeError)
+                    return
+                }
+                onSuccess(user)
+            case .failure(let error):
+                onError(error)
+            }
         }
     }
 
-    enum BookError: Error {
+    // MARK: Errors
+    enum RepositoryError: Error {
         case decodeError
     }
 
 }
 
-protocol BookRepositoryType {
-    func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void)
-}
 
-protocol RentRepositoryType {
-    func postRent(book: Book, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
-}

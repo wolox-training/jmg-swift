@@ -34,7 +34,7 @@ class LibraryCell: UITableViewCell {
         super.prepareForReuse()
         request?.cancel()
         request = nil
-        coverImage.image = UIImage(named: "PlaceholderCover")
+        coverImage.image = UIImage.placeholderCover
     }
 
     // MARK: Public interface
