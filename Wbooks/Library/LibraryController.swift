@@ -43,13 +43,13 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     private func setupNavBar() {
         navigationItem.title = NSLocalizedString("LIBRARY_VIEW.TITLE", comment: "Main title at the top of the library view")
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "SearchButton"),
+            image: UIImage.searchButton,
             style: .plain,
             target: self,
             action: #selector(searchTapped)
         )
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "NotificationButton"),
+            image: UIImage.notificationButton,
             style: .plain,
             target: self,
             action: #selector(notificationsTapped)

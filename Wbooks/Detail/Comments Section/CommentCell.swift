@@ -23,7 +23,7 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    // MARK: Actions
+    // MARK: Lifecycle methods
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .clear
@@ -33,7 +33,7 @@ class CommentCell: UITableViewCell {
         super.prepareForReuse()
         request?.cancel()
         request = nil
-        userImage.image = UIImage(named: "User1")
+        userImage.image = UIImage.defaultUserAvatar
     }
     
     // MARK: Public interface

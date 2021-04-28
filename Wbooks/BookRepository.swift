@@ -7,6 +7,23 @@
 
 import Alamofire
 
+// MARK: Protocols
+protocol BookRepositoryType {
+    func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void)
+}
+
+protocol RentRepositoryType {
+    func postRent(book: Book, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+}
+
+protocol CommentRepositoryType {
+    func fetchComments(bookID: Int, onSuccess: @escaping ([Comment]) -> Void, onError: @escaping (Error) -> Void)
+}
+
+protocol UserRepositoryType {
+    func fetchUser(userID: Int, onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void)
+}
+
 struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepositoryType, UserRepositoryType {
     
     // MARK: Properties
@@ -25,7 +42,7 @@ struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepository
                 case .success(let value):
                     guard let JSONbooks = try? JSONSerialization.data(withJSONObject: value, options: []),
                           let books = try? JSONDecoder().decode([Book].self, from: JSONbooks) else {
-                        onError(BookError.decodeError)
+                        onError(RepositoryError.decodeError)
                         return
                     }
                     onSuccess(books)
@@ -68,7 +85,7 @@ struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepository
             case .success(let value):
                 guard let JSONcomments = try? JSONSerialization.data(withJSONObject: value, options: []),
                       let comments = try? JSONDecoder().decode([Comment].self, from: JSONcomments) else {
-                    onError(CommentError.decodeError)
+                    onError(RepositoryError.decodeError)
                     return
                 }
                 onSuccess(comments)
@@ -84,7 +101,7 @@ struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepository
             switch response.result {
             case.success(let value):
                 guard let JSONuser = try? JSONSerialization.data(withJSONObject: value, options: []), let user = try? JSONDecoder().decode(User.self, from: JSONuser) else {
-                    onError(UserError.decodeError)
+                    onError(RepositoryError.decodeError)
                     return
                 }
                 onSuccess(user)
@@ -95,33 +112,10 @@ struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepository
     }
 
     // MARK: Errors
-    enum BookError: Error {
-        case decodeError
-    }
-    
-    enum CommentError: Error {
-        case decodeError
-    }
-    
-    enum UserError: Error {
+    enum RepositoryError: Error {
         case decodeError
     }
 
 }
 
-// MARK: Protocols
-protocol BookRepositoryType {
-    func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void)
-}
 
-protocol RentRepositoryType {
-    func postRent(book: Book, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
-}
-
-protocol CommentRepositoryType {
-    func fetchComments(bookID: Int, onSuccess: @escaping ([Comment]) -> Void, onError: @escaping (Error) -> Void)
-}
-
-protocol UserRepositoryType {
-    func fetchUser(userID: Int, onSuccess: @escaping (User) -> Void, onError: @escaping (Error) -> Void)
-}

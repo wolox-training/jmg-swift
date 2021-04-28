@@ -10,7 +10,7 @@ import UIKit
 final class NavigationController: UINavigationController {
 
     // MARK: Properties
-    private let appTint: UIColor = UIColor(red: 0, green: 173/255, blue: 238/255, alpha: 1)
+    private let appTint: UIColor = UIColor.defaultBlue
 
     // MARK: Actions
     override func viewDidLoad() {

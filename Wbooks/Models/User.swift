@@ -12,4 +12,5 @@ struct User: Codable {
     // MARK: Properties
     let id: Int
     let username, image: String
+    
 }

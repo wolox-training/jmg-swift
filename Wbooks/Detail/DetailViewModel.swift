@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewModel {
     
-    var commentsArray: [Comment] = []
+    private var commentsArray: [Comment] = []
     
     // MARK: Properties
     private let book: Book

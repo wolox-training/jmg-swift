@@ -34,7 +34,7 @@ class CommentCellViewModel {
     
     // MARK: API Requests
     func getUser(onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
-        userRepository.fetchUser(userID: comment.user_id, onSuccess: { [weak self] (user) -> Void in
+        userRepository.fetchUser(userID: comment.user_id, onSuccess: { [weak self] user in
             self?.user = user
             onSuccess()
         }, onError: { _ in
