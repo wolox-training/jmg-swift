@@ -196,9 +196,9 @@
 		A042B521261F7C310039CF73 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A072D93D261CF476002DBD0F /* MainViewController.swift */,
 				A072D942261CF4C3002DBD0F /* MainView.swift */,
 				A072D976261D0179002DBD0F /* MainView.xib */,
+				A072D93D261CF476002DBD0F /* MainViewController.swift */,
 				A06C2462262881AC00BF0D18 /* MainViewModel.swift */,
 			);
 			path = Main;

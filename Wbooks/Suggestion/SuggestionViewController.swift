@@ -12,9 +12,6 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     // MARK: Properties
     private lazy var suggestionView: SuggestionView = SuggestionView()
     private var viewModel: SuggestionViewModel
-    let galleryTitle = NSLocalizedString("ALERT_BOX.GALLERY_OPTION", comment: "")
-    let cameraTitle = NSLocalizedString("ALERT_BOX.CAMERA_OPTION", comment: "")
-    let cancelTitle = NSLocalizedString("ALERT_BOX.CANCEL", comment: "")
     
     // MARK: Inizializers
     init(viewModel: SuggestionViewModel) {
@@ -30,7 +27,6 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupTextFields()
     }
     
     override func loadView() {
@@ -39,29 +35,17 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     }
     
     func setupView() {
-        navigationItem.leftBarButtonItem = navigationItem.backBarButtonItem
-        setupSubmitButton()
+        suggestionView.setupSubmitButton()
+        suggestionView.submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
+        
+        suggestionView.setupTextFields()
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(coverInputTapped))
         suggestionView.coverInput.addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func setupSubmitButton() {
-        suggestionView.submitButton.setMainStyle()
-        suggestionView.submitButton.setTitle(NSLocalizedString("ADDNEW_VIEW.SUBMIT_BUTTON_TITLE", comment: "Main title at the top of the new book view"), for: .normal)
-        suggestionView.submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
-    }
-    
-    func setupTextFields() {
-        suggestionView.titleInput.setupTextField()
-        suggestionView.titleInput.placeholder = NSLocalizedString("ADDNEW_VIEW.TITLE_INPUT_PLACEHOLDER", comment: "Placeholder text for the book title input field")
-        suggestionView.authorInput.setupTextField()
-        suggestionView.authorInput.placeholder = NSLocalizedString("ADDNEW_VIEW.AUTHOR_INPUT_PLACEHOLDER", comment: "Placeholder text for the book author input field")
-        suggestionView.yearInput.setupTextField()
-        suggestionView.yearInput.placeholder = NSLocalizedString("ADDNEW_VIEW.YEAR_INPUT_PLACEHOLDER", comment: "Placeholder text for the book release year input field")
-        suggestionView.topicInput.setupTextField()
-        suggestionView.topicInput.placeholder = NSLocalizedString("ADDNEW_VIEW.TOPIC_INPUT_PLACEHOLDER", comment: "Placeholder text for the book genre input field")
-        suggestionView.descriptionInput.setupTextField()
-        suggestionView.descriptionInput.placeholder = NSLocalizedString("ADDNEW_VIEW.DESCRIPTION_INPUT_PLACEHOLDER", comment: "Placeholder text for the book description input field")
+        
     }
     
     func setupNavBar() {
@@ -71,8 +55,10 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     // MARK: Actions
     @objc func coverInputTapped() {
         let alertController = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
-//        let imagePickerController = UIImagePickerController()
-//        imagePickerController.delegate = self
+        
+        let galleryTitle = NSLocalizedString("ALERT_BOX.GALLERY_OPTION", comment: "Title for the Gallery option button on the image method picker")
+        let cameraTitle = NSLocalizedString("ALERT_BOX.CAMERA_OPTION", comment: "Title for the Camera option button on the image method picker")
+        let cancelTitle = NSLocalizedString("ALERT_BOX.CANCEL", comment: "Title for the Cancel button on the image method picker")
         
         let chooseAction = UIAlertAction(title: galleryTitle, style: .default) { _ in
             let imagePickerController = UIImagePickerController()
