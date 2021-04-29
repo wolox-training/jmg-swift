@@ -292,11 +292,11 @@
 		A069E6CD263B204900BACDCB /* Suggestion */ = {
 			isa = PBXGroup;
 			children = (
-				A069E6CE263B204900BACDCB /* SuggestionView.xib */,
-				A069E6CF263B204900BACDCB /* SuggestionViewModel.swift */,
 				A069E6D0263B204900BACDCB /* InputField.swift */,
-				A069E6D1263B204900BACDCB /* SuggestionViewController.swift */,
 				A069E6D2263B204900BACDCB /* SuggestionView.swift */,
+				A069E6CE263B204900BACDCB /* SuggestionView.xib */,
+				A069E6D1263B204900BACDCB /* SuggestionViewController.swift */,
+				A069E6CF263B204900BACDCB /* SuggestionViewModel.swift */,
 			);
 			path = Suggestion;
 			sourceTree = "<group>";

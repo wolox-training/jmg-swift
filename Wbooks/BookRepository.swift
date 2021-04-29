@@ -10,6 +10,7 @@ import Alamofire
 // MARK: Protocols
 protocol BookRepositoryType {
     func fetchBooks(onSuccess: @escaping ([Book]) -> Void, onError: @escaping (Error) -> Void)
+    func postBook(book: NewBook, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
 }
 
 protocol RentRepositoryType {
@@ -107,6 +108,29 @@ struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepository
                 onSuccess(user)
             case .failure(let error):
                 onError(error)
+            }
+        }
+    }
+    
+    func postBook(book: NewBook, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        let params: [String : Any] = ["title" : book.title,
+                                      "author" : book.author,
+                                      "year" : book.year,
+                                      "genre" : book.genre,
+                                      "image" : "",
+                                      "status" : "Available"]
+        let url = URL(string: BookRepository.baseUrl + BookRepository.books)!
+        AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            do {
+                switch response.result {
+                case.success(_):
+                    onSuccess()
+                case .failure(let error):
+                    onError(error)
+                }
+            } catch {
+                onError(error)
+                return
             }
         }
     }

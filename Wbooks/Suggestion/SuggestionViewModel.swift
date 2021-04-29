@@ -18,7 +18,10 @@ struct SuggestionViewModel {
     }
     
     // MARK: API Requests
-    func addBook() {
+    func addBook(book: NewBook, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
+        // generate book
+        //post book
         print("Book added (or not)")
     }
+    
 }
