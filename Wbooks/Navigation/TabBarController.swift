@@ -20,7 +20,7 @@ final class TabBarController: UITabBarController {
         
         let wishlist  = UIViewController()
         
-        let addNewController = SuggestionViewController(viewModel: SuggestionViewModel())
+        let addNewController = AddNewViewController(viewModel: AddNewViewModel())
         let addNew = NavigationController(rootViewController: addNewController)
         
         let rentals = UIViewController()

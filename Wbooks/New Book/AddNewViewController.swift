@@ -1,5 +1,5 @@
 //
-//  SuggestionViewController.swift
+//  AddNewViewController.swift
 //  Wbooks
 //
 //  Created by Juan Martín Gordo on 28/04/2021.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class SuggestionViewController: UIViewController & UINavigationControllerDelegate {
+final class AddNewViewController: UIViewController & UINavigationControllerDelegate {
     
     // MARK: Properties
-    private lazy var suggestionView: SuggestionView = SuggestionView()
-    private var viewModel: SuggestionViewModel
+    private lazy var addNewView: AddNewView = AddNewView()
+    private var viewModel: AddNewViewModel
     
     // MARK: Inizializers
-    init(viewModel: SuggestionViewModel) {
+    init(viewModel: AddNewViewModel) {
         self.viewModel = viewModel
         super.init(nibName: .none, bundle: .none)
     }
@@ -30,18 +30,18 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     }
     
     override func loadView() {
-        view = suggestionView
+        view = addNewView
         setupNavBar()
     }
     
     func setupView() {
-        suggestionView.setupSubmitButton()
-        suggestionView.submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
+        addNewView.setupSubmitButton()
+        addNewView.submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
         
-        suggestionView.setupTextFields()
+        addNewView.setupTextFields()
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(coverInputTapped))
-        suggestionView.coverInput.addGestureRecognizer(tapGestureRecognizer)
+        addNewView.coverInput.addGestureRecognizer(tapGestureRecognizer)
     }
     
     private func setupSubmitButton() {
@@ -49,7 +49,7 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     }
     
     func setupNavBar() {
-        navigationItem.title = NSLocalizedString("ADDNEW_VIEW.TITLE", comment: "Main title at the top of the book suggestion view")
+        navigationItem.title = NSLocalizedString("ADDNEW_VIEW.TITLE", comment: "Main title at the top of the new book view")
     }
     
     // MARK: Actions
@@ -85,8 +85,8 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     }
     
     @objc func submitButtonTapped() {
-        let inputsArray = [suggestionView.titleInput, suggestionView.authorInput, suggestionView.yearInput, suggestionView.topicInput, suggestionView.descriptionInput]
-        if inputsArray.contains(where: { ($0?.isEmpty())! }) || !isNumeric(string: suggestionView.yearInput.text!) {
+        let inputsArray = [addNewView.titleInput, addNewView.authorInput, addNewView.yearInput, addNewView.topicInput, addNewView.descriptionInput]
+        if inputsArray.contains(where: { ($0?.isEmpty())! }) || !isNumeric(string: addNewView.yearInput.text!) {
             let errorMessage = NSLocalizedString("ALERT_BOX.FIELD_ERROR", comment: "Message detailing an error in the alert box")
             self.displayErrorAlert(message: errorMessage)
         } else {
@@ -95,7 +95,7 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
                     field!.text = ""
                     field!.setDefaultStyle()
                 }
-                self.suggestionView.coverInput.image = UIImage.addNew
+                self.addNewView.coverInput.image = UIImage.addNew
                 self.displaySuccessAlert()
             }, onError: {
                 let errorMessage = NSLocalizedString("ALERT_BOX.BOOK_ADD_ERROR_MESSAGE", comment: "Message detailing an error in the alert box")
@@ -105,7 +105,7 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     }
     
     private func generateBook() -> NewBook {
-        return NewBook(title: suggestionView.titleInput.text!, author: suggestionView.authorInput.text!, genre: suggestionView.topicInput.text!, year: suggestionView.yearInput.text!, image: "", status: "Available")
+        return NewBook(title: addNewView.titleInput.text!, author: addNewView.authorInput.text!, genre: addNewView.topicInput.text!, year: addNewView.yearInput.text!, image: "", status: "Available")
     }
     
     private func isNumeric(string: String) -> Bool {
@@ -132,12 +132,12 @@ final class SuggestionViewController: UIViewController & UINavigationControllerD
     
 }
 
-extension SuggestionViewController: UIImagePickerControllerDelegate {
+extension AddNewViewController: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         print("image saved to var")
-        suggestionView.coverInput.image = image
+        addNewView.coverInput.image = image
         print("image should've changed")
         picker.dismiss(animated: true, completion: nil)
         print("picker dismissed")

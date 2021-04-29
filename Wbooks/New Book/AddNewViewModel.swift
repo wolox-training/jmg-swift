@@ -1,5 +1,5 @@
 //
-//  SuggestionViewModel.swift
+//  AddNewViewModel.swift
 //  Wbooks
 //
 //  Created by Juan Martín Gordo on 28/04/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SuggestionViewModel {
+class AddNewViewModel {
     
     // MARK: Properties
     private let repository: BookRepositoryType

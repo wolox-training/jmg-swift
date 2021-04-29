@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuggestionView" customModule="Wbooks" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewView" customModule="Wbooks" customModuleProvider="target">
             <connections>
                 <outlet property="authorInput" destination="Npo-1I-YfS" id="w0a-W8-CtB"/>
                 <outlet property="containerView" destination="5Fg-JL-4by" id="OG5-FB-OdH"/>
