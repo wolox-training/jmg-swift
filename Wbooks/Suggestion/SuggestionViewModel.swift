@@ -18,5 +18,7 @@ struct SuggestionViewModel {
     }
     
     // MARK: API Requests
-    // func addBook() {}
+    func addBook() {
+        print("Book added (or not)")
+    }
 }

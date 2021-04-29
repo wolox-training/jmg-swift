@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SuggestionViewController: UIViewController {
+class SuggestionViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     // MARK: Properties
     private lazy var suggestionView: SuggestionView = SuggestionView()
@@ -37,8 +37,15 @@ class SuggestionViewController: UIViewController {
     
     func setupView() {
         navigationItem.leftBarButtonItem = navigationItem.backBarButtonItem
+        setupSubmitButton()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(coverInputTapped))
+        suggestionView.coverInput.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    private func setupSubmitButton() {
         suggestionView.submitButton.setMainStyle()
         suggestionView.submitButton.setTitle(NSLocalizedString("ADDNEW_VIEW.SUBMIT_BUTTON_TITLE", comment: ""), for: .normal)
+        suggestionView.submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
     }
     
     func setupTextFields() {
@@ -58,4 +65,47 @@ class SuggestionViewController: UIViewController {
         navigationItem.title = NSLocalizedString("ADDNEW_VIEW.TITLE", comment: "Main title at the top of the book suggestion view")
     }
     
+    @objc func coverInputTapped() {
+        print("Cover input tapped")
+//        let alertController = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.delegate = self
+//        
+//        let chooseAction = UIAlertAction(title: "Gallery", style: .default) { _ in
+//            let imagePickerController = UIImagePickerController()
+//            imagePickerController.delegate = self
+//            imagePickerController.sourceType = .photoLibrary
+//            self.present(imagePickerController, animated: true, completion: .none)
+//        }
+//        alertController.addAction(chooseAction)
+//        
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            let takeAction = UIAlertAction(title: "Camera", style: .default) { _ in
+//                let imagePickerController = UIImagePickerController()
+//                imagePickerController.delegate = self
+//                imagePickerController.sourceType = .camera
+//                self.present(imagePickerController, animated: true, completion: .none)
+//            }
+//            alertController.addAction(takeAction)
+//        }
+//
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: .none)
+//        alertController.addAction(cancelAction)
+//        
+//        self.present(imagePickerController, animated: true, completion: nil)
+//        
+//        // imagePickerController(_:, didFinishPickingMediaWithInfo: let image = info[UIImagePickerControllerOriginalImage] as! UImage)
+//        
+//        imagePickerController.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func submitButtonTapped() {
+        let inputsArray = [suggestionView.titleInput, suggestionView.authorInput, suggestionView.yearInput, suggestionView.topicInput, suggestionView.descriptionInput]
+        if !inputsArray.allSatisfy({$0!.isEmpty()}) && CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: suggestionView.yearInput.text!)) {
+            viewModel.addBook()
+        } else {
+            print("Error: one or more fields are empty")
+        }
+    }
+
 }

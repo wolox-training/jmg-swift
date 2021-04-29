@@ -30,7 +30,8 @@ class InputField: UITextField {
     }
     
     @objc func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        if ((self.text?.isEmpty) != nil) {
+        if self.isEmpty() {
+            print("is empty")
             self.setInvalidStyle()
             return
         }
@@ -38,7 +39,11 @@ class InputField: UITextField {
     }
     
     func isValid() -> Bool {
-        return true // placeholder for function
+        if self.isEmpty() {
+            return false
+        } else {
+            return true
+        }
     }
     
     func setDefaultStyle() {
@@ -57,8 +62,8 @@ class InputField: UITextField {
         
     }
     
-    func isEmpty(string: String) -> Bool {
-        return string.isEmpty
+    func isEmpty() -> Bool {
+        return self.text?.trimmingCharacters(in: .whitespaces) == ""
     }
     
 }
