@@ -30,6 +30,9 @@
 "ALERT_BOX.FIELD_ERROR" = "Uno o más campos están vacíos o no son válidos";
 "ALERT_BOX.BOOK_ADD_ERROR_MESSAGE" = "Ocurrió un problema agregrando el libro";
 "ALERT_BOX.BOOK_ADDED" = "Libro agregado correctamente";
+"ALERT_BOX.GALLERY_OPTION" = "Galería";
+"ALERT_BOX.CAMERA_OPTION" = "Cámara";
+"ALERT_BOX.CANCEL" = "Cancelar";
 "ALERT_BOX.BUTTON" = "Ok";
 
 /* DETAIL VIEW */

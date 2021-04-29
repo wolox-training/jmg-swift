@@ -7,11 +7,14 @@
 
 import UIKit
 
-class SuggestionViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+final class SuggestionViewController: UIViewController & UINavigationControllerDelegate {
     
     // MARK: Properties
     private lazy var suggestionView: SuggestionView = SuggestionView()
     private var viewModel: SuggestionViewModel
+    let galleryTitle = NSLocalizedString("ALERT_BOX.GALLERY_OPTION", comment: "")
+    let cameraTitle = NSLocalizedString("ALERT_BOX.CAMERA_OPTION", comment: "")
+    let cancelTitle = NSLocalizedString("ALERT_BOX.CANCEL", comment: "")
     
     // MARK: Inizializers
     init(viewModel: SuggestionViewModel) {
@@ -65,22 +68,48 @@ class SuggestionViewController: UIViewController, UIImagePickerControllerDelegat
         navigationItem.title = NSLocalizedString("ADDNEW_VIEW.TITLE", comment: "Main title at the top of the book suggestion view")
     }
     
+    // MARK: Actions
     @objc func coverInputTapped() {
-        print("Cover input tapped")
-        // alert pick
+        let alertController = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+//        let imagePickerController = UIImagePickerController()
+//        imagePickerController.delegate = self
+        
+        let chooseAction = UIAlertAction(title: galleryTitle, style: .default) { _ in
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: .none)
+        }
+        alertController.addAction(chooseAction)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let takeAction = UIAlertAction(title: cameraTitle, style: .default) { _ in
+                let imagePickerController = UIImagePickerController()
+                imagePickerController.delegate = self
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: .none)
+            }
+            alertController.addAction(takeAction)
+        }
+        
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .default, handler: .none)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @objc func submitButtonTapped() {
         let inputsArray = [suggestionView.titleInput, suggestionView.authorInput, suggestionView.yearInput, suggestionView.topicInput, suggestionView.descriptionInput]
-        if inputsArray.contains(where: { ($0?.isEmpty())! }) || !(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: suggestionView.yearInput.text!))) {
+        if inputsArray.contains(where: { ($0?.isEmpty())! }) || !isNumeric(string: suggestionView.yearInput.text!) {
             let errorMessage = NSLocalizedString("ALERT_BOX.FIELD_ERROR", comment: "Message detailing an error in the alert box")
-                self.displayErrorAlert(message: errorMessage)
+            self.displayErrorAlert(message: errorMessage)
         } else {
             viewModel.addBook(book: generateBook(), onSuccess: {
                 for field in inputsArray {
                     field!.text = ""
                     field!.setDefaultStyle()
                 }
+                self.suggestionView.coverInput.image = UIImage.addNew
                 self.displaySuccessAlert()
             }, onError: {
                 let errorMessage = NSLocalizedString("ALERT_BOX.BOOK_ADD_ERROR_MESSAGE", comment: "Message detailing an error in the alert box")
@@ -91,6 +120,10 @@ class SuggestionViewController: UIViewController, UIImagePickerControllerDelegat
     
     private func generateBook() -> NewBook {
         return NewBook(title: suggestionView.titleInput.text!, author: suggestionView.authorInput.text!, genre: suggestionView.topicInput.text!, year: suggestionView.yearInput.text!, image: "", status: "Available")
+    }
+    
+    private func isNumeric(string: String) -> Bool {
+        return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
     }
     
     private func displayErrorAlert(message: String) {
@@ -109,6 +142,19 @@ class SuggestionViewController: UIViewController, UIImagePickerControllerDelegat
         let alertController = UIAlertController(title: nil, message: rentSuccessMessage, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: errorDismiss, style: .default, handler: nil))
         self.present(alertController, animated: true)
+    }
+    
+}
+
+extension SuggestionViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        print("image saved to var")
+        suggestionView.coverInput.image = image
+        print("image should've changed")
+        picker.dismiss(animated: true, completion: nil)
+        print("picker dismissed")
     }
     
 }

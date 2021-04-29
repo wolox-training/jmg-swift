@@ -30,6 +30,9 @@
 "ALERT_BOX.FIELD_ERROR" = "One or more fields are empty of not valid";
 "ALERT_BOX.BOOK_ADD_ERROR_MESSAGE" = "There was a problem adding the book";
 "ALERT_BOX.BOOK_ADDED" = "Book added successfully";
+"ALERT_BOX.GALLERY_OPTION" = "Gallery";
+"ALERT_BOX.CAMERA_OPTION" = "Camera";
+"ALERT_BOX.CANCEL" = "Cancel";
 "ALERT_BOX.BUTTON" = "Ok";
 
 /* DETAIL VIEW */

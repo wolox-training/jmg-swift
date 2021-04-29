@@ -31,7 +31,6 @@ class InputField: UITextField {
     
     @objc func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if self.isEmpty() {
-            print("is empty")
             self.setInvalidStyle()
             return
         }
