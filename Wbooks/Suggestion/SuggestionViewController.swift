@@ -67,50 +67,24 @@ class SuggestionViewController: UIViewController, UIImagePickerControllerDelegat
     
     @objc func coverInputTapped() {
         print("Cover input tapped")
-//        let alertController = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
-//        let imagePickerController = UIImagePickerController()
-//        imagePickerController.delegate = self
-//        
-//        let chooseAction = UIAlertAction(title: "Gallery", style: .default) { _ in
-//            let imagePickerController = UIImagePickerController()
-//            imagePickerController.delegate = self
-//            imagePickerController.sourceType = .photoLibrary
-//            self.present(imagePickerController, animated: true, completion: .none)
-//        }
-//        alertController.addAction(chooseAction)
-//        
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            let takeAction = UIAlertAction(title: "Camera", style: .default) { _ in
-//                let imagePickerController = UIImagePickerController()
-//                imagePickerController.delegate = self
-//                imagePickerController.sourceType = .camera
-//                self.present(imagePickerController, animated: true, completion: .none)
-//            }
-//            alertController.addAction(takeAction)
-//        }
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: .none)
-//        alertController.addAction(cancelAction)
-//        
-//        self.present(imagePickerController, animated: true, completion: nil)
-//        
-//        // imagePickerController(_:, didFinishPickingMediaWithInfo: let image = info[UIImagePickerControllerOriginalImage] as! UImage)
-//        
-//        imagePickerController.dismiss(animated: true, completion: nil)
+        // alert pick
     }
     
     @objc func submitButtonTapped() {
         let inputsArray = [suggestionView.titleInput, suggestionView.authorInput, suggestionView.yearInput, suggestionView.topicInput, suggestionView.descriptionInput]
         if inputsArray.contains(where: { ($0?.isEmpty())! }) || !(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: suggestionView.yearInput.text!))) {
-            let alertController = UIAlertController(title: "Error", message: "One or more fields are empty or not valid", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alertController, animated: true)
+            let errorMessage = NSLocalizedString("ALERT_BOX.FIELD_ERROR", comment: "Message detailing an error in the alert box")
+                self.displayErrorAlert(message: errorMessage)
         } else {
             viewModel.addBook(book: generateBook(), onSuccess: {
-                // alert displaying success message
-                // reset fields
-            }, onError: { _ in
-                // alert displaying error message
+                for field in inputsArray {
+                    field!.text = ""
+                    field!.setDefaultStyle()
+                }
+                self.displaySuccessAlert()
+            }, onError: {
+                let errorMessage = NSLocalizedString("ALERT_BOX.BOOK_ADD_ERROR_MESSAGE", comment: "Message detailing an error in the alert box")
+                self.displayErrorAlert(message: errorMessage)
             })
         }
     }
@@ -118,5 +92,23 @@ class SuggestionViewController: UIViewController, UIImagePickerControllerDelegat
     private func generateBook() -> NewBook {
         return NewBook(title: suggestionView.titleInput.text!, author: suggestionView.authorInput.text!, genre: suggestionView.topicInput.text!, year: suggestionView.yearInput.text!, image: "", status: "Available")
     }
+    
+    private func displayErrorAlert(message: String) {
+        let errorTitle = NSLocalizedString("ALERT_BOX.TITLE", comment: "Title for the error alert box")
+        let errorDismiss = NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box")
+        
+        let alertController = UIAlertController(title: errorTitle, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: errorDismiss, style: .default, handler: nil))
+        self.present(alertController, animated: true)
+    }
+    
+    private func displaySuccessAlert() {
+        let rentSuccessMessage = NSLocalizedString("ALERT_BOX.BOOK_ADDED", comment: "Message detailing an error in the alert box")
+        let errorDismiss = NSLocalizedString("ALERT_BOX.BUTTON", comment: "Text for the dismiss button on the alert box")
 
+        let alertController = UIAlertController(title: nil, message: rentSuccessMessage, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: errorDismiss, style: .default, handler: nil))
+        self.present(alertController, animated: true)
+    }
+    
 }

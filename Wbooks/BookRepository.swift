@@ -117,8 +117,8 @@ struct BookRepository: BookRepositoryType, RentRepositoryType, CommentRepository
                                       "author" : book.author,
                                       "year" : book.year,
                                       "genre" : book.genre,
-                                      "image" : "",
-                                      "status" : "Available"]
+                                      "image" : book.image,
+                                      "status" : book.status]
         let url = URL(string: BookRepository.baseUrl + BookRepository.books)!
         AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             do {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct SuggestionViewModel {
+class SuggestionViewModel {
     
     // MARK: Properties
     private let repository: BookRepositoryType
@@ -18,10 +18,13 @@ struct SuggestionViewModel {
     }
     
     // MARK: API Requests
-    func addBook(book: NewBook, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void) {
-        // generate book
-        //post book
-        print("Book added (or not)")
+    func addBook(book: NewBook, onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+        repository.postBook(book: book, onSuccess: { [weak self] in
+            onSuccess()
+        }, onError: { _ in
+            onError()
+        })
+
     }
     
 }
