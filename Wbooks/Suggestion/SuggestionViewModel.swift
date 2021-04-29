@@ -10,7 +10,7 @@ import UIKit
 struct SuggestionViewModel {
     
     // MARK: Properties
-    let repository: BookRepositoryType
+    private let repository: BookRepositoryType
     
     // MARK: Inizialization
     init(repository: BookRepositoryType = BookRepository()) {
