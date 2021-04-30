@@ -110,7 +110,6 @@ final class LibraryController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     private func cellTapped(index: IndexPath) {
-        // Transition to book detail view
         let detailsViewModel = viewModel.createDetailViewModel(for: index.row)
         let controller = DetailViewController(viewModel: detailsViewModel)
         controller.modalPresentationStyle = .fullScreen

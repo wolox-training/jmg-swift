@@ -27,6 +27,12 @@
 "ALERT_BOX.ERROR_MESSAGE" = "Ha ocurrido un error.";
 "ALERT_BOX.BOOK_UNAVAILABLE_MESSAGE" = "Este libro no está disponible para alquilar actualmente.";
 "ALERT_BOX.BOOK_RENTED" = "Libro alquilado correctamente. ¡Que lo disfrutes!";
+"ALERT_BOX.FIELD_ERROR" = "Uno o más campos están vacíos o no son válidos";
+"ALERT_BOX.BOOK_ADD_ERROR_MESSAGE" = "Ocurrió un problema agregrando el libro";
+"ALERT_BOX.BOOK_ADDED" = "Libro agregado correctamente";
+"ALERT_BOX.GALLERY_OPTION" = "Galería";
+"ALERT_BOX.CAMERA_OPTION" = "Cámara";
+"ALERT_BOX.CANCEL" = "Cancelar";
 "ALERT_BOX.BUTTON" = "Ok";
 
 /* DETAIL VIEW */
@@ -35,3 +41,12 @@
 "DETAIL_VIEW.RENT_BUTTON_TITLE" = "ALQUILAR";
 "DETAIL_VIEW.BOOK_IS_AVAILABLE" = "Disponible";
 "DETAIL_VIEW.BOOK_IS_UNAVAILABLE" = "No disponible";
+
+/* ADD NEW BOOK VIEW */
+"ADDNEW_VIEW.TITLE" = "AGREGAR LIBRO";
+"ADDNEW_VIEW.TITLE_INPUT_PLACEHOLDER" = "Título del libro";
+"ADDNEW_VIEW.AUTHOR_INPUT_PLACEHOLDER" = "Autor";
+"ADDNEW_VIEW.YEAR_INPUT_PLACEHOLDER" = "Año";
+"ADDNEW_VIEW.TOPIC_INPUT_PLACEHOLDER" = "Género";
+"ADDNEW_VIEW.DESCRIPTION_INPUT_PLACEHOLDER" = "Descripción";
+"ADDNEW_VIEW.SUBMIT_BUTTON_TITLE" = "ENVIAR";

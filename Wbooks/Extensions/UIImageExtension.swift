@@ -72,9 +72,14 @@ extension UIImage {
         return UIImage(named: "User2")!
     }
     
-    //MARK: Covers
+    // MARK: Covers
     static var placeholderCover: UIImage {
         return UIImage(named: "PlaceholderCover")!
+    }
+    
+    // MARK: Others
+    static var addNew: UIImage {
+        return UIImage(named: "AddNew")!
     }
     
 }

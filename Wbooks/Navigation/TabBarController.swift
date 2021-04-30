@@ -17,8 +17,12 @@ final class TabBarController: UITabBarController {
 
         let libraryController = LibraryController(viewModel: LibraryViewModel())
         let library = NavigationController(rootViewController: libraryController)
+        
         let wishlist  = UIViewController()
-        let addNew = UIViewController()
+        
+        let addNewController = AddNewViewController(viewModel: AddNewViewModel())
+        let addNew = NavigationController(rootViewController: addNewController)
+        
         let rentals = UIViewController()
         let settings = UIViewController()
 

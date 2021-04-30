@@ -24,6 +24,11 @@
 		A054A5B4261B4AC50092926E /* WbooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A5B3261B4AC50092926E /* WbooksTests.swift */; };
 		A054A5BF261B4AC50092926E /* WbooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A054A5BE261B4AC50092926E /* WbooksUITests.swift */; };
 		A05ABAA2261CC3B40080619A /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05ABAA1261CC3B40080619A /* Enviroment.swift */; };
+		A069E6D3263B204900BACDCB /* AddNewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A069E6CE263B204900BACDCB /* AddNewView.xib */; };
+		A069E6D4263B204900BACDCB /* AddNewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A069E6CF263B204900BACDCB /* AddNewViewModel.swift */; };
+		A069E6D5263B204900BACDCB /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A069E6D0263B204900BACDCB /* InputField.swift */; };
+		A069E6D6263B204900BACDCB /* AddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A069E6D1263B204900BACDCB /* AddNewViewController.swift */; };
+		A069E6D7263B204900BACDCB /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A069E6D2263B204900BACDCB /* AddNewView.swift */; };
 		A06C244A262873E100BF0D18 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C2449262873E100BF0D18 /* LibraryViewModel.swift */; };
 		A06C24562628771300BF0D18 /* LibraryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C24552628771300BF0D18 /* LibraryCellViewModel.swift */; };
 		A06C2463262881AC00BF0D18 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06C2462262881AC00BF0D18 /* MainViewModel.swift */; };
@@ -99,6 +104,11 @@
 		A054A5BE261B4AC50092926E /* WbooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WbooksUITests.swift; sourceTree = "<group>"; };
 		A054A5C0261B4AC50092926E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A05ABAA1261CC3B40080619A /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		A069E6CE263B204900BACDCB /* AddNewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewView.xib; sourceTree = "<group>"; };
+		A069E6CF263B204900BACDCB /* AddNewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewModel.swift; sourceTree = "<group>"; };
+		A069E6D0263B204900BACDCB /* InputField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
+		A069E6D1263B204900BACDCB /* AddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewViewController.swift; sourceTree = "<group>"; };
+		A069E6D2263B204900BACDCB /* AddNewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
 		A06C2449262873E100BF0D18 /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		A06C24552628771300BF0D18 /* LibraryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellViewModel.swift; sourceTree = "<group>"; };
 		A06C2462262881AC00BF0D18 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -186,9 +196,9 @@
 		A042B521261F7C310039CF73 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A072D93D261CF476002DBD0F /* MainViewController.swift */,
 				A072D942261CF4C3002DBD0F /* MainView.swift */,
 				A072D976261D0179002DBD0F /* MainView.xib */,
+				A072D93D261CF476002DBD0F /* MainViewController.swift */,
 				A06C2462262881AC00BF0D18 /* MainViewModel.swift */,
 			);
 			path = Main;
@@ -240,6 +250,7 @@
 		A054A59B261B4AC40092926E /* Wbooks */ = {
 			isa = PBXGroup;
 			children = (
+				A069E6CD263B204900BACDCB /* New Book */,
 				A08F9B7F263060C600B6CCEC /* Detail */,
 				A0222DED262DF298005C8BEE /* Extensions */,
 				A06C2451262875AA00BF0D18 /* Models */,
@@ -276,6 +287,18 @@
 				A054A5C0261B4AC50092926E /* Info.plist */,
 			);
 			path = WbooksUITests;
+			sourceTree = "<group>";
+		};
+		A069E6CD263B204900BACDCB /* New Book */ = {
+			isa = PBXGroup;
+			children = (
+				A069E6D0263B204900BACDCB /* InputField.swift */,
+				A069E6D2263B204900BACDCB /* AddNewView.swift */,
+				A069E6CE263B204900BACDCB /* AddNewView.xib */,
+				A069E6D1263B204900BACDCB /* AddNewViewController.swift */,
+				A069E6CF263B204900BACDCB /* AddNewViewModel.swift */,
+			);
+			path = "New Book";
 			sourceTree = "<group>";
 		};
 		A06C2451262875AA00BF0D18 /* Models */ = {
@@ -464,6 +487,7 @@
 			files = (
 				A042B51D261F6EB40039CF73 /* LibraryCell.xib in Resources */,
 				A0A316232624F64600CC4870 /* Localizable.strings in Resources */,
+				A069E6D3263B204900BACDCB /* AddNewView.xib in Resources */,
 				A08F9B83263060E100B6CCEC /* DetailView.xib in Resources */,
 				A0417385261E2CC8004EAF62 /* LibraryView.xib in Resources */,
 				A072D977261D0179002DBD0F /* MainView.xib in Resources */,
@@ -624,11 +648,14 @@
 				A054A59D261B4AC40092926E /* AppDelegate.swift in Sources */,
 				A05ABAA2261CC3B40080619A /* Enviroment.swift in Sources */,
 				A06C2463262881AC00BF0D18 /* MainViewModel.swift in Sources */,
+				A069E6D4263B204900BACDCB /* AddNewViewModel.swift in Sources */,
 				A0951A1326385BE7005ED73D /* User.swift in Sources */,
 				A06C244A262873E100BF0D18 /* LibraryViewModel.swift in Sources */,
 				A042B51C261F6EB40039CF73 /* LibraryCell.swift in Sources */,
 				A08F9B82263060E100B6CCEC /* DetailViewController.swift in Sources */,
 				A0C70A0E2637479B00395DB3 /* Comment.swift in Sources */,
+				A069E6D6263B204900BACDCB /* AddNewViewController.swift in Sources */,
+				A069E6D7263B204900BACDCB /* AddNewView.swift in Sources */,
 				A08D7CAB2625EFFC00F27738 /* TabBarController.swift in Sources */,
 				A072D93E261CF476002DBD0F /* MainViewController.swift in Sources */,
 				A08F9B9726307BCF00B6CCEC /* BookDetailView.swift in Sources */,
@@ -638,6 +665,7 @@
 				A08F9BA926307C7800B6CCEC /* BookDetailController.swift in Sources */,
 				A06C24562628771300BF0D18 /* LibraryCellViewModel.swift in Sources */,
 				A09AE8AE261F559700F8B1F9 /* LibraryController.swift in Sources */,
+				A069E6D5263B204900BACDCB /* InputField.swift in Sources */,
 				A0C70A012637426D00395DB3 /* CommentCellViewModel.swift in Sources */,
 				A0C709B22637228700395DB3 /* UIColorExtension.swift in Sources */,
 				A08F9B9C26307BDD00B6CCEC /* BookDetailViewModel.swift in Sources */,
