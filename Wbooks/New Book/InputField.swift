@@ -38,11 +38,7 @@ class InputField: UITextField {
     }
     
     func isValid() -> Bool {
-        if self.isEmpty() {
-            return false
-        } else {
-            return true
-        }
+       return !isEmpty()
     }
     
     func setDefaultStyle() {

@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class AddNewViewController: UIViewController & UINavigationControllerDelegate {
+final class AddNewViewController: UIViewController, UINavigationControllerDelegate {
     
     // MARK: Properties
     private lazy var addNewView: AddNewView = AddNewView()
     private var viewModel: AddNewViewModel
     
-    // MARK: Inizializers
+    // MARK: Initialization
     init(viewModel: AddNewViewModel) {
         self.viewModel = viewModel
         super.init(nibName: .none, bundle: .none)
@@ -27,14 +27,14 @@ final class AddNewViewController: UIViewController & UINavigationControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupNavBar()
     }
     
     override func loadView() {
         view = addNewView
-        setupNavBar()
     }
     
-    func setupView() {
+    private func setupView() {
         addNewView.setupSubmitButton()
         addNewView.submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
         
@@ -42,10 +42,6 @@ final class AddNewViewController: UIViewController & UINavigationControllerDeleg
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(coverInputTapped))
         addNewView.coverInput.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    private func setupSubmitButton() {
-        
     }
     
     func setupNavBar() {
@@ -60,20 +56,20 @@ final class AddNewViewController: UIViewController & UINavigationControllerDeleg
         let cameraTitle = NSLocalizedString("ALERT_BOX.CAMERA_OPTION", comment: "Title for the Camera option button on the image method picker")
         let cancelTitle = NSLocalizedString("ALERT_BOX.CANCEL", comment: "Title for the Cancel button on the image method picker")
         
-        let chooseAction = UIAlertAction(title: galleryTitle, style: .default) { _ in
+        let chooseAction = UIAlertAction(title: galleryTitle, style: .default) { [weak self] _ in
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
             imagePickerController.sourceType = .photoLibrary
-            self.present(imagePickerController, animated: true, completion: .none)
+            self!.present(imagePickerController, animated: true, completion: .none)
         }
         alertController.addAction(chooseAction)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let takeAction = UIAlertAction(title: cameraTitle, style: .default) { _ in
+            let takeAction = UIAlertAction(title: cameraTitle, style: .default) { [weak self] _ in
                 let imagePickerController = UIImagePickerController()
                 imagePickerController.delegate = self
                 imagePickerController.sourceType = .camera
-                self.present(imagePickerController, animated: true, completion: .none)
+                self!.present(imagePickerController, animated: true, completion: .none)
             }
             alertController.addAction(takeAction)
         }
@@ -86,21 +82,30 @@ final class AddNewViewController: UIViewController & UINavigationControllerDeleg
     
     @objc func submitButtonTapped() {
         let inputsArray = [addNewView.titleInput, addNewView.authorInput, addNewView.yearInput, addNewView.topicInput, addNewView.descriptionInput]
-        if inputsArray.contains(where: { ($0?.isEmpty())! }) || !isNumeric(string: addNewView.yearInput.text!) {
+        
+        if areValid(fields: inputsArray) {
             let errorMessage = NSLocalizedString("ALERT_BOX.FIELD_ERROR", comment: "Message detailing an error in the alert box")
             self.displayErrorAlert(message: errorMessage)
         } else {
             viewModel.addBook(book: generateBook(), onSuccess: {
-                for field in inputsArray {
-                    field!.text = ""
-                    field!.setDefaultStyle()
-                }
+                self.clearFields(fields: inputsArray)
                 self.addNewView.coverInput.image = UIImage.addNew
                 self.displaySuccessAlert()
             }, onError: {
                 let errorMessage = NSLocalizedString("ALERT_BOX.BOOK_ADD_ERROR_MESSAGE", comment: "Message detailing an error in the alert box")
                 self.displayErrorAlert(message: errorMessage)
             })
+        }
+    }
+    
+    private func areValid(fields: [InputField?]) -> Bool {
+        return fields.contains(where: { ($0!.isEmpty()) }) || !isNumeric(string: addNewView.yearInput.text!)
+    }
+    
+    private func clearFields(fields: [InputField?]) {
+        for field in fields {
+            field!.text = ""
+            field!.setDefaultStyle()
         }
     }
     
@@ -136,11 +141,8 @@ extension AddNewViewController: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        print("image saved to var")
         addNewView.coverInput.image = image
-        print("image should've changed")
         picker.dismiss(animated: true, completion: nil)
-        print("picker dismissed")
     }
     
 }

@@ -13,7 +13,7 @@ class LibraryViewModel {
     private let repository: BookRepositoryType
     var booksArray: [Book] = []
 
-    // MARK: Inizialization
+    // MARK: Initializers
     init(repository: BookRepositoryType = BookRepository()) {
         self.repository = repository
     }

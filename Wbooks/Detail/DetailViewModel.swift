@@ -20,7 +20,7 @@ class DetailViewModel {
         return commentsArray.count
     }
     
-    // MARK: Inizialization
+    // MARK: Initializers
     init(book: Book, rentRepository: RentRepositoryType = BookRepository(), commentRepository: CommentRepositoryType = BookRepository()) {
         self.book = book
         self.rentRepository = rentRepository

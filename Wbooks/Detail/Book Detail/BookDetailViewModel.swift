@@ -13,7 +13,7 @@ struct BookDetailViewModel {
     private let book: Book
     private let repository: RentRepositoryType
 
-    // MARK: Inizialization
+    // MARK: Initializers
     init(book: Book, repository: RentRepositoryType) {
         self.book = book
         self.repository = repository

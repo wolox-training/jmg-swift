@@ -12,7 +12,7 @@ class AddNewViewModel {
     // MARK: Properties
     private let repository: BookRepositoryType
     
-    // MARK: Inizialization
+    // MARK: Initializers
     init(repository: BookRepositoryType = BookRepository()) {
         self.repository = repository
     }
