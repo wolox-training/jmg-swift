@@ -32,39 +32,39 @@
                     <rect key="frame" x="20" y="128" width="374" height="539"/>
                     <subviews>
                         <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddNew" translatesAutoresizingMaskIntoConstraints="NO" id="xUJ-3I-7tv">
-                            <rect key="frame" x="8" y="8" width="140" height="140"/>
+                            <rect key="frame" x="16" y="16" width="140" height="140"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="140" id="4eb-fC-OiC"/>
                                 <constraint firstAttribute="height" constant="140" id="hKW-9a-FAK"/>
                             </constraints>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vvU-ko-S9R" customClass="InputField" customModule="Wbooks" customModuleProvider="target">
-                            <rect key="frame" x="8" y="164" width="358" height="34"/>
+                            <rect key="frame" x="16" y="172" width="342" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Npo-1I-YfS" customClass="InputField" customModule="Wbooks" customModuleProvider="target">
-                            <rect key="frame" x="8" y="222" width="358" height="34"/>
+                            <rect key="frame" x="16" y="230" width="342" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hLg-y4-H7j" customClass="InputField" customModule="Wbooks" customModuleProvider="target">
-                            <rect key="frame" x="8" y="280" width="358" height="34"/>
+                            <rect key="frame" x="16" y="288" width="342" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Topic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-yg-jgu" customClass="InputField" customModule="Wbooks" customModuleProvider="target">
-                            <rect key="frame" x="8" y="338" width="358" height="34"/>
+                            <rect key="frame" x="16" y="346" width="342" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-4X-5zZ" customClass="InputField" customModule="Wbooks" customModuleProvider="target">
-                            <rect key="frame" x="8" y="396" width="358" height="34"/>
+                            <rect key="frame" x="16" y="404" width="342" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahj-Uh-HNp">
-                            <rect key="frame" x="47" y="481" width="280" height="50"/>
+                            <rect key="frame" x="47" y="473" width="280" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="Cmu-tf-u79"/>
                                 <constraint firstAttribute="width" constant="280" id="NmD-65-hkc"/>
@@ -76,29 +76,29 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="Ahj-Uh-HNp" firstAttribute="centerX" secondItem="5Fg-JL-4by" secondAttribute="centerX" id="22a-40-gp0"/>
-                        <constraint firstItem="hLg-y4-H7j" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="8" id="2hU-vh-RDp"/>
+                        <constraint firstItem="hLg-y4-H7j" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="16" id="2hU-vh-RDp"/>
                         <constraint firstItem="Npo-1I-YfS" firstAttribute="top" secondItem="vvU-ko-S9R" secondAttribute="bottom" constant="24" id="M1x-4D-KsH"/>
-                        <constraint firstAttribute="trailing" secondItem="LAb-yg-jgu" secondAttribute="trailing" constant="8" id="Oif-kc-dDx"/>
-                        <constraint firstItem="vvU-ko-S9R" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="8" id="QGF-zg-iE8"/>
-                        <constraint firstAttribute="trailing" secondItem="mtm-4X-5zZ" secondAttribute="trailing" constant="8" id="QNC-0r-MfP"/>
-                        <constraint firstItem="xUJ-3I-7tv" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="8" id="UEe-Ck-ElC"/>
-                        <constraint firstItem="mtm-4X-5zZ" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="8" id="bxq-7A-8mx"/>
-                        <constraint firstAttribute="trailing" secondItem="vvU-ko-S9R" secondAttribute="trailing" constant="8" id="etm-Xk-ngq"/>
+                        <constraint firstAttribute="trailing" secondItem="LAb-yg-jgu" secondAttribute="trailing" constant="16" id="Oif-kc-dDx"/>
+                        <constraint firstItem="vvU-ko-S9R" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="16" id="QGF-zg-iE8"/>
+                        <constraint firstAttribute="trailing" secondItem="mtm-4X-5zZ" secondAttribute="trailing" constant="16" id="QNC-0r-MfP"/>
+                        <constraint firstItem="xUJ-3I-7tv" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="16" id="UEe-Ck-ElC"/>
+                        <constraint firstItem="mtm-4X-5zZ" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="16" id="bxq-7A-8mx"/>
+                        <constraint firstAttribute="trailing" secondItem="vvU-ko-S9R" secondAttribute="trailing" constant="16" id="etm-Xk-ngq"/>
                         <constraint firstItem="hLg-y4-H7j" firstAttribute="top" secondItem="Npo-1I-YfS" secondAttribute="bottom" constant="24" id="f7x-sc-Bbz"/>
-                        <constraint firstAttribute="trailing" secondItem="Npo-1I-YfS" secondAttribute="trailing" constant="8" id="fg8-aP-aBx"/>
-                        <constraint firstAttribute="trailing" secondItem="hLg-y4-H7j" secondAttribute="trailing" constant="8" id="iZh-Xj-VC6"/>
-                        <constraint firstItem="LAb-yg-jgu" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="8" id="k7x-9S-8jN"/>
+                        <constraint firstAttribute="trailing" secondItem="Npo-1I-YfS" secondAttribute="trailing" constant="16" id="fg8-aP-aBx"/>
+                        <constraint firstAttribute="trailing" secondItem="hLg-y4-H7j" secondAttribute="trailing" constant="16" id="iZh-Xj-VC6"/>
+                        <constraint firstItem="LAb-yg-jgu" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="16" id="k7x-9S-8jN"/>
                         <constraint firstItem="mtm-4X-5zZ" firstAttribute="top" secondItem="LAb-yg-jgu" secondAttribute="bottom" constant="24" id="lYN-OP-mA4"/>
                         <constraint firstItem="vvU-ko-S9R" firstAttribute="top" secondItem="xUJ-3I-7tv" secondAttribute="bottom" constant="16" id="n4B-G2-Mx9"/>
-                        <constraint firstItem="xUJ-3I-7tv" firstAttribute="top" secondItem="5Fg-JL-4by" secondAttribute="top" constant="8" id="n63-iu-Tg6"/>
+                        <constraint firstItem="xUJ-3I-7tv" firstAttribute="top" secondItem="5Fg-JL-4by" secondAttribute="top" constant="16" id="n63-iu-Tg6"/>
                         <constraint firstItem="LAb-yg-jgu" firstAttribute="top" secondItem="hLg-y4-H7j" secondAttribute="bottom" constant="24" id="qBd-dC-esG"/>
-                        <constraint firstItem="Npo-1I-YfS" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="8" id="sJj-SA-piY"/>
-                        <constraint firstAttribute="bottom" secondItem="Ahj-Uh-HNp" secondAttribute="bottom" constant="8" id="uBw-Cc-XLk"/>
+                        <constraint firstItem="Npo-1I-YfS" firstAttribute="leading" secondItem="5Fg-JL-4by" secondAttribute="leading" constant="16" id="sJj-SA-piY"/>
+                        <constraint firstAttribute="bottom" secondItem="Ahj-Uh-HNp" secondAttribute="bottom" constant="16" id="uBw-Cc-XLk"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="XYd-tI-7kO"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.91764705879999997" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="XYd-tI-7kO" firstAttribute="trailing" secondItem="5Fg-JL-4by" secondAttribute="trailing" constant="20" id="KSz-QF-hjx"/>
                 <constraint firstItem="PP9-g9-bqO" firstAttribute="top" secondItem="7KJ-i8-Jgd" secondAttribute="top" constant="-2" id="Nl2-eD-TJG"/>

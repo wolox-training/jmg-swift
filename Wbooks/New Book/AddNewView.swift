@@ -11,7 +11,11 @@ final class AddNewView: NibView {
     
     // MARK: Properties
 
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            containerView.layer.cornerRadius = 5
+        }
+    }
     
     @IBOutlet weak var coverInput: UIImageView!
     
